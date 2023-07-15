@@ -1,0 +1,104 @@
+.randomchar {
+   max-width: 100%;
+   min-height: 260px;
+   margin: 50px auto;
+   box-sizing: border-box;
+   display: grid;
+   grid-template-columns: repeat(2, 50%);
+   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.25);
+}
+
+.randomchar__block {
+   max-width: 100%;
+   padding: 40px 35px;
+   max-height: 260px;
+   display: flex;
+   gap: 20px;
+}
+
+.randomchar__img {
+   max-width: 40%;
+   object-fit: fill;
+}
+
+.randomchar__info {
+   max-width: 270px;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+}
+
+.randomchar__name {
+   margin: 0;
+   padding: 0;
+   font-weight: bold;
+   font-size: 22px;
+   letter-spacing: -0.045em;
+   overflow: hidden; /* Обрезаем всё за пределами блока */
+   text-overflow: ellipsis; /* Добавляем многоточие */
+   color: black;
+}
+
+.randomchar__button-flex {
+   display: flex;
+   gap: 20px;
+   justify-content: center;
+}
+
+.randomchar__selected-descriptioniption {
+   font-size: 16px;
+   line-height: 18px;
+   max-width: 270px;
+   max-height: 90px;
+   overflow: hidden;
+   text-overflow: ellipsis;
+}
+
+.randomchar__selected-buttons {
+   // display: none !important;
+   // max-width: auto;
+   display: flex;
+   grid-gap: 15px; //отступ между flex элементами
+}
+
+.randomchar__static {
+   max-width: 100%;
+   max-height: 260px;
+   padding: 40px 35px;
+   background-color: #232222;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   position: relative;
+   .button-main:active {
+      background-color: #fff;
+   }
+   .button-main {
+      max-width: 108px;
+   }
+}
+
+.randomchar__title {
+   margin: 0;
+   padding: 0;
+   font-weight: bold;
+   font-size: 24px;
+   color: white;
+}
+
+.randomchar__decoration {
+   width: 202.54px;
+   height: 189px;
+   bottom: 14px;
+   right: -44px;
+   position: absolute;
+}
+
+.char__select {
+   font-weight: bold;
+   font-size: 18px;
+   line-height: 24px;
+   text-align: center;
+}
+
+//!  MEDIA  /////////////////////////////////////////////////////////

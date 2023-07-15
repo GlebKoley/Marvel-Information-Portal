@@ -1,0 +1,53 @@
+//////// лист персонажей при помощи свойства CSS GRID
+// .char__grid {
+//    max-width: 650px;
+//    display: grid;
+//    grid-template-columns: repeat(3, 1fr);
+//    grid-column-gap: 25px;
+//    grid-row-gap: 30px;
+// }
+
+//////// лист персонажей при помощи свойства CSS flex
+.char__grid {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 25px;
+}
+
+.char__item {
+   max-width: 200px;
+   min-height: 318px;
+   background-color: #232222;
+
+   .char__img {
+      transform: translate(-15px, -15px);
+      width: 200px;
+      height: 200px;
+      object-fit: fill;
+   }
+}
+.char__item:hover {
+   box-shadow: 0 5px 20px #9f0013;
+   transform: translateY(-8px);
+}
+
+.char__item.char__item_selected {
+   box-shadow: 0 5px 20px #9f0013;
+   transform: translateY(-8px);
+}
+
+.char__name-container {
+   font-weight: bold;
+   font-size: 18px;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   text-transform: uppercase;
+   color: #fff;
+}
+.char__name-text {
+   margin: 0;
+   max-height: 90px;
+}
+
+//!  MEDIA  /////////////////////////////////////////////////////////
+

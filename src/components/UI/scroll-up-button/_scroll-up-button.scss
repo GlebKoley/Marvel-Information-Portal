@@ -1,0 +1,13 @@
+.btn-scroll-to-top {
+   position: sticky;
+   width: 70px;
+   bottom: 300px;
+   top: -200px;
+}
+
+.btn-scroll-button {
+   width: inherit;
+}
+.btn-scroll-button:hover {
+   transform: scale(1.1);
+}

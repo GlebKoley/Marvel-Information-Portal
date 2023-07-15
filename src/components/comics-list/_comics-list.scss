@@ -1,0 +1,52 @@
+.comics__list {
+   padding-bottom: 50px;
+
+   li,
+   ul {
+      padding: 0;
+   }
+
+   .button-main {
+      margin: 50px auto;
+      display: block;
+   }
+}
+
+.comics__item {
+   max-width: 225px;
+   min-height: 415px;
+   display: flex;
+   flex-direction: column;
+   margin-bottom: 55px;
+}
+
+.comics__grid {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+}
+
+.comics__item-img {
+   width: 225px;
+   height: 346px;
+   object-fit: cover;
+   object-position: left;
+   filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.25));
+}
+.comics__item-name {
+   margin: 10px 0 10px 0;
+   width: 225px;
+   font-weight: 700;
+   font-size: 16px;
+   line-height: 16px;
+   color: #000000;
+   text-transform: uppercase;
+}
+
+.comics__item-price {
+   height: 16px;
+   font-weight: 700;
+   font-size: 15px;
+   line-height: 16px;
+   color: rgba(0, 0, 0, 0.6);
+}
