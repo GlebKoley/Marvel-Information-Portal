@@ -1,5 +1,5 @@
 import { AppBanner } from "../app-banner/app-banner";
-import { SingleComic } from "../comics-list/SingleComic/_single-comics";
+import { SingleComic } from "../comics-list/SingleComic/single-comics";
 
 const SingleComicPage = () => {
    return (

@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useMarvelRequestServices } from "../../../services/marvel-service";
 import { SpinnerBlock } from "../../UI/spinner-block/spinner-block";
 
-const SingleCharContent = () => {
+const SingleChar = () => {
    const { charId } = useParams();
    const { getSingleCharacter, loading } = useMarvelRequestServices();
    const [char, setChar] = useState(null);
@@ -26,4 +26,4 @@ const SingleCharContent = () => {
    );
 };
 
-export { SingleCharContent };
+export { SingleChar };

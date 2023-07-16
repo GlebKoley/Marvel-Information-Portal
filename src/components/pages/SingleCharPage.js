@@ -1,11 +1,11 @@
 import { AppBanner } from "../app-banner/app-banner";
-import { SingleCharContent } from "../char-content/SingleCharContent/SingleCharContent";
+import { SingleChar } from "../char-content/SingleChar/SingleChar";
 
 const SingleCharPage = (props) => {
    return (
       <div className="container">
          <AppBanner />
-         <SingleCharContent />
+         <SingleChar />
       </div>
    );
 };

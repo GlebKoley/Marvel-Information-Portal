@@ -41,7 +41,6 @@ const useMarvelRequestServices = () => {
    };
 
    const getSingleCharacterByName = async (name) => {
-      console.log(name);
       const res = await request(`${_apiBase}characters?nameStartsWith=${name}&${_apiKey}`);
       return res;
    };
