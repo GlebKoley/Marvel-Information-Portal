@@ -11,11 +11,11 @@ const AppHeader = () => {
                </Link>
             </h1>
             <nav className="app__menu">
-               <NavLink className="characters link" to="characters">
+               <NavLink className="app__menu-characters-link" to="characters">
                   Characters
                </NavLink>
                <span style={{ userSelect: "none" }}>/</span>
-               <NavLink className="comics link" to="comics">
+               <NavLink className="app__menu-comics-link" to="comics">
                   Comics
                </NavLink>
             </nav>

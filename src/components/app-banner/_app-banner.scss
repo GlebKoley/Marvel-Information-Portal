@@ -1,21 +1,24 @@
 .banner {
    display: grid;
-   grid-template-columns: 0.3fr 1.2fr 1.7fr;
+   align-items: center;
+   grid-template-columns: 0.9fr 1.2fr 1.7fr;
    margin: 40px auto;
    background: #232222;
-}
-.avengers-image {
-   margin-left: 45px;
-}
-.avengers-logo {
-   position: absolute;
-   right: 25px;
-}
-.banner-text {
-   width: 235px;
-   font-weight: 700;
-   font-size: 24px;
-   line-height: 28px;
-   color: #ffffff;
-   margin: auto;
+
+   &__avengers-image {
+      margin-left: 45px;
+   }
+
+   &__avengers-logo {
+      position: absolute;
+      right: 25px;
+   }
+
+   &-text {
+      width: 235px;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 28px;
+      color: #ffffff;
+   }
 }

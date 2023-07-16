@@ -13,7 +13,12 @@ const SingleComic = () => {
    }, [comicsId]);
 
    if (loading || comics == null) return <SpinnerBlock />;
+
    return comics.map((item) => {
+      if (!item.description) {
+         item.description = "Description not aviable";
+      }
+
       return (
          <div className="single-comics-container">
             <img className="single-comics-img" src={item.thumbnail} alt=""></img>
@@ -23,8 +28,8 @@ const SingleComic = () => {
                   {item.description.length > 800 ? item.description.slice(0, 800) + "..." : item.description}
                </p>
                <p className="single-comics-pages">Pages: {item.pages}</p>
-               <p className="single-comics-language">Language: {item.language}</p>
-               <h2 className="single-comics-price">{item.price}$</h2>
+               <p className="single-comics-language">{`Language` + !item.language ? `Language not aviable` : `:${item.language}`}</p>
+               <h2 className="single-comics-price">{item.price !== 0 ? item.price + "$" : `Price not aviable`}</h2>
             </div>
             <Link className="back-to-all-button" to="/comics">
                Back to all

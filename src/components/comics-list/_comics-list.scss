@@ -1,13 +1,11 @@
 .comics__list {
-   padding-bottom: 50px;
-
    li,
    ul {
       padding: 0;
    }
 
    .button-main {
-      margin: 50px auto;
+      margin: 30px auto;
       display: block;
    }
 }
@@ -17,10 +15,12 @@
    min-height: 415px;
    display: flex;
    flex-direction: column;
-   margin-bottom: 55px;
+   justify-content: space-between;
+   // margin-bottom: 55px;
 }
 
 .comics__grid {
+   gap: 25px;
    display: flex;
    flex-wrap: wrap;
    justify-content: space-between;

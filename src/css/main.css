@@ -128,13 +128,13 @@ legend {
   gap: 20px;
 }
 
-.randomchar__img {
-  max-width: 40%;
-  -o-object-fit: fill;
-     object-fit: fill;
+.randomchar__block-img {
+  max-width: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
-.randomchar__info {
+.randomchar__block-info {
   max-width: 270px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -178,13 +178,6 @@ legend {
   text-overflow: ellipsis;
 }
 
-.randomchar__selected-buttons {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  grid-gap: 15px;
-}
-
 .randomchar__static {
   max-width: 100%;
   max-height: 260px;
@@ -209,7 +202,7 @@ legend {
   max-width: 108px;
 }
 
-.randomchar__title {
+.randomchar__static-title {
   margin: 0;
   padding: 0;
   font-weight: bold;
@@ -217,7 +210,7 @@ legend {
   color: white;
 }
 
-.randomchar__decoration {
+.randomchar__static-decoration {
   width: 202.54px;
   height: 189px;
   bottom: 14px;
@@ -234,27 +227,26 @@ legend {
 
 .banner {
   display: grid;
-  grid-template-columns: 0.3fr 1.2fr 1.7fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  grid-template-columns: 0.9fr 1.2fr 1.7fr;
   margin: 40px auto;
   background: #232222;
 }
-
-.avengers-image {
+.banner__avengers-image {
   margin-left: 45px;
 }
-
-.avengers-logo {
+.banner__avengers-logo {
   position: absolute;
   right: 25px;
 }
-
 .banner-text {
   width: 235px;
   font-weight: 700;
   font-size: 24px;
   line-height: 28px;
   color: #ffffff;
-  margin: auto;
 }
 
 .app__header {
@@ -291,19 +283,14 @@ legend {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  gap: 5px;
 }
-.app__menu .characters.link {
-  margin-right: 5px;
-}
-.app__menu .comics.link {
-  margin-left: 5px;
-}
-.app__menu .characters.link:hover,
-.app__menu .comics.link:hover {
+.app__menu-characters-link:hover, .app__menu-comics-link:hover {
   color: #9f0013;
 }
 
 .char__content {
+  gap: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -313,7 +300,8 @@ legend {
 }
 
 .char__list {
-  min-width: 60%;
+  -ms-flex-preferred-size: 650px;
+      flex-basis: 650px;
 }
 .char__list li {
   padding: 15px;
@@ -326,36 +314,12 @@ legend {
   padding-left: 0;
 }
 
-.char__selected-description {
-  margin-top: 20px;
-  font-size: 18px;
-  line-height: 18px;
-}
-
-.char__selected-description.not-aviable {
-  font-weight: bold;
-  font-size: 18px;
-  line-height: 24px;
-  margin-top: 20px;
-}
-
-.input__container {
-  margin-top: 15px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  grid-gap: 30px;
-}
-
-.comics__list {
-  padding-bottom: 50px;
-}
 .comics__list li,
 .comics__list ul {
   padding: 0;
 }
 .comics__list .button-main {
-  margin: 50px auto;
+  margin: 30px auto;
   display: block;
 }
 
@@ -369,10 +333,13 @@ legend {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-bottom: 55px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .comics__grid {
+  gap: 25px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -483,7 +450,8 @@ legend {
 }
 
 .char__selected {
-  min-width: 40%;
+  -ms-flex-preferred-size: 425px;
+      flex-basis: 425px;
 }
 .char__selected-container {
   display: -webkit-box;
@@ -502,8 +470,6 @@ legend {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 20px;
-  border: 3px solid rgb(119, 80, 80);
   grid-gap: 25px;
   max-height: 200px;
 }
@@ -513,6 +479,17 @@ legend {
   max-width: 50%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+.char__selected-description {
+  margin-top: 10px;
+  font-size: 16px;
+  line-height: 18px;
+}
+.char__selected-description.not-aviable {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+  margin-top: 10px;
 }
 .char__selected-comics-list-item {
   display: -webkit-box;
@@ -527,7 +504,7 @@ legend {
   margin: 15px 0px;
   padding: 0px 10px;
   cursor: pointer;
-  font-size: 17px;
+  font-size: 14px;
   line-height: 25px;
   word-wrap: break-word;
   -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -555,14 +532,14 @@ legend {
 .char__selected-name {
   text-transform: uppercase;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 20px;
   margin: 0;
   color: #000000;
 }
 .char__selected-comics-text {
   font-weight: bold;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 24px;
   margin-top: 10px;
 }
@@ -574,7 +551,7 @@ legend {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 10px;
+  gap: 20px;
 }
 .char__selected-input-find {
   display: -webkit-box;
