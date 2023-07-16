@@ -3,6 +3,7 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } 
 import { AppHeader } from "../app-header/app-header";
 import { MainPage } from "../pages/main-page";
 import { ComicsListPage } from "../pages/comics-list-page";
+import { SingleCharPage } from "../pages/SingleCharPage";
 import { SingleComicPage } from "../pages/single-comic-page";
 import { Page404 } from "../pages/404page";
 
@@ -11,6 +12,7 @@ const router = createBrowserRouter(
       <Route path="/" element={<AppHeader />}>
          {/* <Route path="/" element={<MainPage />} /> */}
          <Route path="characters" element={<MainPage />} />
+         <Route path="characters/:charId" element={<SingleCharPage />} />
          <Route path="comics" element={<ComicsListPage />} />
          <Route path="comics/:comicsId" element={<SingleComicPage />} />
          <Route path="*" element={<Page404 />}></Route>

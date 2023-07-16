@@ -4,6 +4,7 @@ import { useMarvelRequestServices } from "../../services/marvel-service";
 import { GenerateCharsList } from "./GenerateCharList/generate-char-list";
 import { GenerateLoadNewCharsList } from "./GenerateLoadNewCharsList/generate-load-new-chars-list";
 import { GenerateSelectedCharContent } from "./GenerateSelectCharContent/generate-select-char-content";
+import { FindInputChar } from "./FindInputChar/FindInputChar/FindInputChar";
 
 const CharContent = () => {
    const { loading, getAllCharacters, getSingleCharacter, getSingleCharacterByName, error } = useMarvelRequestServices();
@@ -76,15 +77,7 @@ const CharContent = () => {
                {/*// ! ВЫНЕСТИ ЛОГИКУ ВЫБОРУ ПЕРСОНАЖА В КОМПОНЕНТ GenerateSelectedCharContent */}
 
                <GenerateSelectedCharContent loading={loading} charSelected={charSelected} charComicsList={charComicsList} />
-               {loading ? null : (
-                  <div className="char__selected-input-find">
-                     Or find a character by name:
-                     <input className="test" type="text" placeholder="Enter name" />
-                     <button className="button-main" onClick={getName}>
-                        FIND
-                     </button>
-                  </div>
-               )}
+               <FindInputChar loading={loading} />
             </div>
 
             {/* </div> */}
