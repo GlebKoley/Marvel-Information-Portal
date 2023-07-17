@@ -7,78 +7,86 @@ const FindInputChar = ({ loading }) => {
    const { getSingleCharacterByName } = useMarvelRequestServices();
    const charUlRef = useRef(null);
 
-   const [charName, setCharName] = useState("spider");
+   const [charName, setCharName] = useState("");
    const [load, setLoad] = useState(false);
    const [emptyName, setEmptyName] = useState(false);
    const [charList, setCharList] = useState(null);
-   // const [charFound, setCharFound] = useState(false);
+   const [refButtonValue, setRefButtonValue] = useState(true);
 
    const findCharHandler = () => {
-      if (charUlRef.current !== null) {
-         charUlRef.current.style.maxHeight = "170px";
-      }
-      if (!charName) {
-         setEmptyName(false);
+      if (charName === "") {
+         setEmptyName(true);
          return;
       } else {
+         setEmptyName(false);
          setLoad(true);
+
          getSingleCharacterByName(charName).then((res) => {
             setCharList(res.data.results);
             setLoad(false);
          });
+
          setCharName("");
       }
    };
 
    const onEnterClick = (e) => {
-      if (charUlRef.current !== null) {
-         charUlRef.current.style.maxHeight = "170px";
-      }
       if (e.key === "Enter") {
+         if (charUlRef.current !== null) {
+            charUlRef.current.style.maxHeight = "160px";
+            setRefButtonValue(true);
+         }
          findCharHandler();
       }
    };
 
-   const plusHeigth = () => {
-      let value = +charUlRef.current.style.maxHeight.replace("px", "") + 1000;
-      charUlRef.current.style.maxHeight = `${+value}px`;
+   const changeMaxHeigth = () => {
+      setRefButtonValue((value) => !value);
+      console.log(refButtonValue);
+      if (!refButtonValue) {
+         charUlRef.current.style.maxHeight = `160px`;
+      } else {
+         charUlRef.current.style.maxHeight = `1000px`;
+      }
    };
 
    return (
       <>
-         {loading ? null : (
-            <div className="char__selected-input-find">
-               <p>Or find a character by name:</p>
-               <div className="char__selected-input-find-container">
-                  <div className="form-container">
-                     <input
-                        type="text"
-                        placeholder="Enter name"
-                        value={charName}
-                        onChange={(e) => setCharName(e.target.value)}
-                        onKeyDown={onEnterClick}></input>
-                     {charName && (
-                        <button
-                           className="clear-button"
-                           type="reset"
-                           title="Click me to clear the input field"
-                           onClick={() => setCharName("")}>
-                           ✖
-                        </button>
-                     )}
-                  </div>
-                  <button className="button-main" onClick={findCharHandler}>
-                     FIND
-                  </button>
+         <div className="char__selected-input-find">
+            <p>Or find a character by name:</p>
+            <div className="char__selected-input-find-container">
+               <div className="form-container">
+                  <input
+                     type="text"
+                     placeholder="Enter character name"
+                     value={charName}
+                     onChange={(e) => setCharName(e.target.value)}
+                     onKeyDown={onEnterClick}></input>
+                  {charName && (
+                     <button
+                        className="clear-button"
+                        type="reset"
+                        title="Click me to clear the input field"
+                        onClick={() => setCharName("")}>
+                        ✖
+                     </button>
+                  )}
                </div>
-               {emptyName && <p>This field is required</p>}
-               {load ? <SpinnerBlock /> : ""}
-               {charList !== null && (
+               <button className="button-main" onClick={findCharHandler}>
+                  FIND
+               </button>
+            </div>
+            {emptyName ? <p style={{ color: "#9f0013", fontSize: "18px" }}>This field is required</p> : ""}
+
+            {load ? (
+               <SpinnerBlock />
+            ) : (
+               charList !== null && (
                   <>
-                     <p style={{ color: "#03710E", fontSize: "18px" }}>{charList.length} characters were found by this name:</p>
+                     <p style={{ color: "#03710E", fontSize: "18px" }}>{charList.length} characters were found by this name</p>
                      <ul ref={charUlRef} className="char__selected-input-char-list">
                         {charList.map((item) => (
-                           <li className="char__selected-input-char-list-item" onClick={() => console.log(item.id)}>
+                           <li key={item.id} className="char__selected-input-char-list-item">
                               <Link to={`${item.id}`} target="_blank">
                                  {item.name}
                               </Link>
@@ -86,14 +94,14 @@ const FindInputChar = ({ loading }) => {
                         ))}
                      </ul>
                      {charList !== null && charList.length > 5 && (
-                        <button className="button-main" onClick={plusHeigth}>
-                           Show all
+                        <button className="button-main" onClick={changeMaxHeigth}>
+                           {refButtonValue ? "Show all" : "Hide"}
                         </button>
                      )}
                   </>
-               )}
-            </div>
-         )}
+               )
+            )}
+         </div>
       </>
    );
 };

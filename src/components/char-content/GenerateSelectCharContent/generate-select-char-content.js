@@ -21,8 +21,10 @@ const GenerateSelectedCharContent = ({ loading, charSelected, charComicsList }) 
                   if (index >= 10) return null;
                   return (
                      <li key={+item.resourceURI.match(/\w+$/gm)}>
-                        {/* {item.name} */}
-                        <Link className="char__selected-comics-list-item" to={`../comics/${item.resourceURI.match(/\w+$/gm).join("")}`}>
+                        <Link
+                           className="char__selected-comics-list-item"
+                           to={`../comics/${item.resourceURI.match(/\w+$/gm).join("")}`}
+                           target="_blank">
                            {item.name}
                         </Link>
                      </li>

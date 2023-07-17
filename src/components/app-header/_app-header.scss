@@ -1,4 +1,4 @@
-.app__header {
+.header {
    max-width: 1100px;
    position: relative;
    padding: 15px;
@@ -14,7 +14,7 @@
    }
 }
 
-.app__title {
+.title {
    font-weight: bold;
    font-size: 28px;
    line-height: 37px;
@@ -30,7 +30,7 @@
    }
 }
 
-.app__menu {
+.nav {
    padding: 0px;
    font-weight: bold;
    font-size: 24px;
@@ -38,8 +38,8 @@
    display: flex;
    gap: 10px;
 
-   &-characters-link:hover,
-   &-comics-link:hover {
+   &__link__characters:hover,
+   &__link__comics:hover {
       color: $main-color;
    }
 

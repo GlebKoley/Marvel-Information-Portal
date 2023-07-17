@@ -12,10 +12,8 @@
 @import "../components/UI/scroll-up-button/scroll-up-button";
 @import "../components/UI/modal-window/modal-window";
 @import "../components/UI/error-message/error-message";
-@import "../components/comics-list/SingleComic/single-comics";
+@import "../components/pages/SinglePageContent";
 @import "../components/char-content/FindInputChar/FindInputChar";
-@import "../components/char-content/SingleChar/SingleChar";
-@import "./media-querry";
 * {
    font-family: "Roboto Condensed", sans-serif;
 }

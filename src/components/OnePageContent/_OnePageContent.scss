@@ -1,0 +1,69 @@
+.container__single__page {
+   margin-top: 35px;
+   display: flex;
+   justify-content: space-between;
+}
+.comics {
+   &__img {
+      width: 300px;
+      min-height: 450px;
+   }
+   &__wrapper {
+      width: 550px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+
+      &__title {
+         font-size: 22px;
+         font-weight: bold;
+      }
+
+      &__price {
+         color: $main-color;
+         font-size: 24px;
+         font-weight: bold;
+      }
+
+      &__description,
+      &__pages,
+      &__language {
+         font-size: 18px;
+      }
+   }
+}
+
+.character {
+   &__img {
+      min-width: 300px;
+      max-height: 300px;
+   }
+
+   &__wrapper {
+      width: 550px;
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+
+      &__title {
+         font-size: 22px;
+         font-weight: bold;
+         text-transform: uppercase;
+      }
+
+      &__description {
+         font-size: 18px;
+      }
+   }
+}
+
+.back-to-all-button {
+   font-size: 18px;
+   font-weight: bold;
+   max-height: 30px;
+
+   &:hover {
+      transform: scale(1.1);
+      text-decoration: underline;
+   }
+}

@@ -18,22 +18,21 @@
          justify-content: space-between;
          align-items: center;
       }
-
-      p:last-child {
-         color: $main-color;
-      }
    }
 
    &-char-list {
       font-weight: 400;
-      max-height: 170px;
+      max-height: 160px;
       overflow: hidden;
-      transition: max-height 800ms ease-in-out;
+      transition: max-height 0.5s;
 
       &-item {
          min-height: 25px;
          margin-bottom: 10px;
          transition: all 0.2s linear;
+         &:last-child {
+            margin-bottom: 0px;
+         }
 
          &:hover {
             background-color: rgb(219, 124, 124);
@@ -51,6 +50,7 @@
 .form-container {
    max-width: 100%;
    position: relative;
+
    input {
       min-height: 40px;
       width: 220px;
