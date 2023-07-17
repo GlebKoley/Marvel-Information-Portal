@@ -1,6 +1,9 @@
 .error__message-content {
    padding: 40px 35px;
    position: relative;
+   @media (max-width: 600px) {
+      padding: 15px;
+   }
 }
 
 .error__message-text {
@@ -14,6 +17,9 @@
    span {
       color: $main-color;
    }
+   @media (max-width: 600px) {
+      font-size: 22px;
+   }
 }
 
 .error__message-image {
@@ -21,4 +27,9 @@
    position: absolute;
    right: 5px;
    bottom: 0px;
+
+   @media (max-width: 600px) {
+      width: 150px;
+      right: 25%;
+   }
 }

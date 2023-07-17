@@ -14,11 +14,31 @@
    max-height: 260px;
    display: flex;
    gap: 20px;
+
+   @media (max-width: 1000px) {
+      padding: 15px;
+      justify-content: space-between;
+      align-items: center;
+   }
+   @media (max-width: 600px) {
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+   }
 }
 
 .randomchar__block-img {
-   max-width: 50%;
+   max-width: 80%;
+   // max-height: 100%;
    object-fit: cover;
+   @media (max-width: 1000px) {
+      max-width: 100%;
+      max-height: 80%;
+   }
+   @media (max-width: 600px) {
+      max-width: 100%;
+      max-height: 55%;
+   }
 }
 
 .randomchar__block-info {
@@ -26,6 +46,11 @@
    display: flex;
    flex-direction: column;
    justify-content: space-between;
+
+   @media (max-width: 600px) {
+      align-items: center;
+      gap: 10px;
+   }
 }
 
 .randomchar__name {
@@ -34,15 +59,26 @@
    font-weight: bold;
    font-size: 22px;
    letter-spacing: -0.045em;
-   overflow: hidden; /* Обрезаем всё за пределами блока */
-   text-overflow: ellipsis; /* Добавляем многоточие */
    color: black;
+
+   @media (max-width: 600px) {
+      font-size: 22px;
+      overflow: hidden;
+   }
 }
 
 .randomchar__button-flex {
    display: flex;
    gap: 20px;
    justify-content: center;
+
+   @media (max-width: 1060px) {
+      display: inline;
+      .button-main {
+         margin-right: 15px;
+         margin-bottom: 10px;
+      }
+   }
 }
 
 .randomchar__selected-descriptioniption {
@@ -52,6 +88,10 @@
    max-height: 90px;
    overflow: hidden;
    text-overflow: ellipsis;
+
+   @media (max-width: 600px) {
+      display: none;
+   }
 }
 
 .randomchar__static {
@@ -70,6 +110,10 @@
    .button-main {
       max-width: 108px;
    }
+
+   @media (max-width: 900px) {
+      padding: 15px;
+   }
 }
 
 .randomchar__static-title {
@@ -78,6 +122,9 @@
    font-weight: bold;
    font-size: 24px;
    color: white;
+   @media (max-width: 600px) {
+      font-size: 22px;
+   }
 }
 
 .randomchar__static-decoration {
@@ -86,6 +133,10 @@
    bottom: 14px;
    right: -44px;
    position: absolute;
+
+   @media (max-width: 1000px) {
+      display: none;
+   }
 }
 
 .char__select {

@@ -4,10 +4,10 @@ import { useMarvelRequestServices } from "../../services/marvel-service";
 import { GenerateCharsList } from "./GenerateCharList/generate-char-list";
 import { GenerateLoadNewCharsList } from "./GenerateLoadNewCharsList/generate-load-new-chars-list";
 import { GenerateSelectedCharContent } from "./GenerateSelectCharContent/generate-select-char-content";
-import { FindInputChar } from "./FindInputChar/FindInputChar/FindInputChar";
+import { FindInputChar } from "./FindInputChar/FindInputChar";
 
 const CharContent = () => {
-   const { loading, getAllCharacters, getSingleCharacter, getSingleCharacterByName, error } = useMarvelRequestServices();
+   const { loading, getAllCharacters, getSingleCharacter } = useMarvelRequestServices();
 
    const [characters, setCharacters] = useState([]);
    const [charSelected, setCharSelected] = useState(null);
@@ -37,6 +37,7 @@ const CharContent = () => {
          setCharComicsList(res.comics);
       });
    };
+   console.log("render");
 
    const resetCharacters = () => {
       setNewListCharsLoad(true);
@@ -51,15 +52,6 @@ const CharContent = () => {
       updateChars();
    };
 
-   const getName = (name) => {
-      let input = document.querySelector(".test");
-      let value = input.value;
-      console.log(value);
-      getSingleCharacterByName(value).then((res) => {
-         console.log(res.data.results);
-      });
-   };
-
    return (
       <div className="char__content">
          <div className="char__list">
@@ -72,15 +64,10 @@ const CharContent = () => {
             <GenerateLoadNewCharsList newListCharsLoad={newListCharsLoad} setCharacters={setCharacters} resetCharacters={resetCharacters} />
          </div>
          <div className="char__selected">
-            {/* <div className="char__info__sticky-container"> */}
             <div className="char__selected-container">
-               {/*// ! ВЫНЕСТИ ЛОГИКУ ВЫБОРУ ПЕРСОНАЖА В КОМПОНЕНТ GenerateSelectedCharContent */}
-
                <GenerateSelectedCharContent loading={loading} charSelected={charSelected} charComicsList={charComicsList} />
                <FindInputChar loading={loading} />
             </div>
-
-            {/* </div> */}
          </div>
       </div>
    );

@@ -6,6 +6,12 @@
    display: flex;
    justify-content: space-between;
    align-items: center;
+
+   @media (max-width: 600px) {
+      flex-direction: column;
+      padding: 0px;
+      gap: 15px;
+   }
 }
 
 .app__title {
@@ -18,6 +24,10 @@
       color: $main-color;
       margin-right: 10px;
    }
+
+   @media (max-width: 600px) {
+      font-size: 35px;
+   }
 }
 
 .app__menu {
@@ -26,11 +36,15 @@
    font-size: 24px;
    line-height: 32px;
    display: flex;
-   gap: 5px;
+   gap: 10px;
 
    &-characters-link:hover,
    &-comics-link:hover {
       color: $main-color;
+   }
+
+   @media (max-width: 600px) {
+      font-size: 30px;
    }
 }
 

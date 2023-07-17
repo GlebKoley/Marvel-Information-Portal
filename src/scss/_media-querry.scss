@@ -1,301 +1,301 @@
-@media (max-width: 375.98px) {
-   .app {
-      padding: 0px !important;
-   }
-   .bg__img {
-      display: none;
-   }
-   .app__header {
-      padding: 0px;
-      gap: 15px;
-      flex-direction: column;
-   }
-   .app__menu {
-      font-size: 35px;
-   }
-   .randomchar {
-      margin: 35px auto;
-   }
-   .randomchar__static {
-      padding: 10px;
-      align-items: center;
-      .button-main {
-         font-size: 14px;
-         width: 150px;
-         height: 40px;
-      }
-   }
-   .randomchar__title {
-      font-size: 19px;
-   }
-   .randomchar__decoration {
-      display: none;
-   }
-   .randomchar__block {
-      padding: 5px;
-      gap: 0px;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-between;
-   }
-   .randomchar__img {
-      max-width: 150px;
-      max-height: 115px;
-      min-height: 0px !important;
-      margin: 0 auto;
-      object-fit: fill;
-   }
-   .randomchar__img-flex {
-      overflow: hidden;
-   }
-   .randomchar__info {
-      gap: 10px;
-      justify-content: flex-end;
-      align-items: center;
-   }
-   .char__info__sticky-container {
-      gap: 10px;
-      bottom: -50px;
-   }
-   .char__info {
-      margin-right: 50px;
-      max-width: 180px;
-      min-width: 0px;
-   }
-   .randomchar__name {
-      width: 100%;
-      text-align: center;
-      font-size: 18px;
-   }
-   .randomchar__selected-descriptioniption {
-      display: none;
-   }
-   .randomchar__button-flex {
-      flex-direction: row;
-      gap: 10px;
-      .button-main,
-      .button-secondary {
-         font-size: 14px;
-         width: 85px;
-         height: 40px;
-      }
-   }
-   .char__content {
-      gap: 0px;
-   }
-   .char__selected-container {
-      width: 180px;
-      padding: 5px;
-      align-items: center;
-   }
-   .char__selected-image {
-      width: 100px;
-      height: 100px;
-   }
-   .char__img {
-      width: 150px !important;
-      height: 150px !important;
-   }
-   .char__item.char__item_selected,
-   .char__item {
-      width: 150px;
-      min-height: 20px !important;
-   }
-   .char__grid {
-      max-width: 187.5px;
-      justify-content: center;
-   }
-   .char__selected-content {
-      gap: 10px;
-      flex-direction: column;
-      align-items: center;
-   }
-   .char__selected-name {
-      font-size: 20px !important;
-      text-align: center;
-   }
-   .char__selected-description-container {
-      align-items: center;
-      text-align: center;
-   }
-   .char__selected-buttons {
-      .button-main,
-      .button-secondary {
-         font-size: 14px;
-         width: 140px;
-         height: 40px;
-      }
-   }
-   .char__selected-description.not-aviable,
-   .char__selected-description,
-   .char__selected-comics-text {
-      text-align: center;
-      font-size: 15px;
-   }
-   .char__selected-comics-list-item {
-      font-size: 14px;
-      line-height: 18px;
-      padding: 5px;
-   }
-   .input__container {
-      flex-direction: column;
-      input {
-         font-size: 15px;
-         padding: 5px;
-         width: 100%;
-      }
-      .button-main {
-         font-size: 14px;
-         width: 100%;
-         height: 40px;
-         margin-top: -10px;
-         margin-bottom: 15px;
-      }
-   }
-   .input__find-char {
-      width: 180px;
-      padding: 5px;
-      font-size: 18px;
-   }
-   .char__list-buttons {
-      position: relative;
-      gap: 10px;
-      .button-main,
-      .button-secondary {
-         z-index: 100;
-      }
-   }
-   .error__message-content {
-      padding: 5px;
-   }
-   .error__message-image {
-      display: none;
-   }
-   .error__message-text {
-      text-align: center;
-      line-height: 35px;
-      font-size: 25px;
-   }
-   .banner {
-      margin: 35px 0px !important;
-   }
-   .avengers-image {
-      margin: 0px;
-   }
-   .avengers-logo {
-      display: none;
-   }
-   .banner-text {
-      margin-left: 15px;
-      font-size: 20px;
-   }
-   .comics__list {
-      .button-main {
-         margin: 20px auto;
-      }
-   }
-   .comics__item {
-      justify-content: space-between;
-      width: 150px;
-      min-height: 0px;
-      margin: 15px auto;
-      a {
-         width: inherit;
-         height: inherit;
-      }
-   }
-   .comics__item-img {
-      width: 100%;
-      height: 100%;
-   }
-   .comics__item-name {
-      width: 100%;
-      font-size: 15px;
-   }
-}
+// @media (max-width: 375.98px) {
+//    .app {
+//       padding: 0px !important;
+//    }
+//    .bg__img {
+//       display: none;
+//    }
+//    .app__header {
+//       padding: 0px;
+//       gap: 15px;
+//       flex-direction: column;
+//    }
+//    .app__menu {
+//       font-size: 35px;
+//    }
+//    .randomchar {
+//       margin: 35px auto;
+//    }
+//    .randomchar__static {
+//       padding: 10px;
+//       align-items: center;
+//       .button-main {
+//          font-size: 14px;
+//          width: 150px;
+//          height: 40px;
+//       }
+//    }
+//    .randomchar__title {
+//       font-size: 19px;
+//    }
+//    .randomchar__decoration {
+//       display: none;
+//    }
+//    .randomchar__block {
+//       padding: 5px;
+//       gap: 0px;
+//       flex-direction: column;
+//       align-items: center;
+//       justify-content: space-between;
+//    }
+//    .randomchar__img {
+//       max-width: 150px;
+//       max-height: 115px;
+//       min-height: 0px !important;
+//       margin: 0 auto;
+//       object-fit: fill;
+//    }
+//    .randomchar__img-flex {
+//       overflow: hidden;
+//    }
+//    .randomchar__info {
+//       gap: 10px;
+//       justify-content: flex-end;
+//       align-items: center;
+//    }
+//    .char__info__sticky-container {
+//       gap: 10px;
+//       bottom: -50px;
+//    }
+//    .char__info {
+//       margin-right: 50px;
+//       max-width: 180px;
+//       min-width: 0px;
+//    }
+//    .randomchar__name {
+//       width: 100%;
+//       text-align: center;
+//       font-size: 18px;
+//    }
+//    .randomchar__selected-descriptioniption {
+//       display: none;
+//    }
+//    .randomchar__button-flex {
+//       flex-direction: row;
+//       gap: 10px;
+//       .button-main,
+//       .button-secondary {
+//          font-size: 14px;
+//          width: 85px;
+//          height: 40px;
+//       }
+//    }
+//    .char__content {
+//       gap: 0px;
+//    }
+//    .char__selected-container {
+//       width: 180px;
+//       padding: 5px;
+//       align-items: center;
+//    }
+//    .char__selected-image {
+//       width: 100px;
+//       height: 100px;
+//    }
+//    .char__img {
+//       width: 150px !important;
+//       height: 150px !important;
+//    }
+//    .char__item.char__item_selected,
+//    .char__item {
+//       width: 150px;
+//       min-height: 20px !important;
+//    }
+//    .char__grid {
+//       max-width: 187.5px;
+//       justify-content: center;
+//    }
+//    .char__selected-content {
+//       gap: 10px;
+//       flex-direction: column;
+//       align-items: center;
+//    }
+//    .char__selected-name {
+//       font-size: 20px !important;
+//       text-align: center;
+//    }
+//    .char__selected-description-container {
+//       align-items: center;
+//       text-align: center;
+//    }
+//    .char__selected-buttons {
+//       .button-main,
+//       .button-secondary {
+//          font-size: 14px;
+//          width: 140px;
+//          height: 40px;
+//       }
+//    }
+//    .char__selected-description.not-aviable,
+//    .char__selected-description,
+//    .char__selected-comics-text {
+//       text-align: center;
+//       font-size: 15px;
+//    }
+//    .char__selected-comics-list-item {
+//       font-size: 14px;
+//       line-height: 18px;
+//       padding: 5px;
+//    }
+//    .input__container {
+//       flex-direction: column;
+//       input {
+//          font-size: 15px;
+//          padding: 5px;
+//          width: 100%;
+//       }
+//       .button-main {
+//          font-size: 14px;
+//          width: 100%;
+//          height: 40px;
+//          margin-top: -10px;
+//          margin-bottom: 15px;
+//       }
+//    }
+//    .input__find-char {
+//       width: 180px;
+//       padding: 5px;
+//       font-size: 18px;
+//    }
+//    .char__list-buttons {
+//       position: relative;
+//       gap: 10px;
+//       .button-main,
+//       .button-secondary {
+//          z-index: 100;
+//       }
+//    }
+//    .error__message-content {
+//       padding: 5px;
+//    }
+//    .error__message-image {
+//       display: none;
+//    }
+//    .error__message-text {
+//       text-align: center;
+//       line-height: 35px;
+//       font-size: 25px;
+//    }
+//    .banner {
+//       margin: 35px 0px !important;
+//    }
+//    .avengers-image {
+//       margin: 0px;
+//    }
+//    .avengers-logo {
+//       display: none;
+//    }
+//    .banner-text {
+//       margin-left: 15px;
+//       font-size: 20px;
+//    }
+//    .comics__list {
+//       .button-main {
+//          margin: 20px auto;
+//       }
+//    }
+//    .comics__item {
+//       justify-content: space-between;
+//       width: 150px;
+//       min-height: 0px;
+//       margin: 15px auto;
+//       a {
+//          width: inherit;
+//          height: inherit;
+//       }
+//    }
+//    .comics__item-img {
+//       width: 100%;
+//       height: 100%;
+//    }
+//    .comics__item-name {
+//       width: 100%;
+//       font-size: 15px;
+//    }
+// }
 
-@media (max-width: 575.98px) {
-   .app {
-      padding: 0px !important;
-   }
-   .randomchar {
-      margin: 20px auto;
-   }
-   .randomchar__decoration {
-      display: none;
-   }
-   .randomchar__static {
-      padding: 15px;
-      align-items: center;
-   }
-   .randomchar__block {
-      gap: 0px;
-      justify-content: space-between;
-      align-items: center;
-      flex-direction: column;
-      padding: 15px;
-   }
-   .error__message-content {
-      padding: 15px;
-   }
-   .error__message-image {
-      width: 130px;
-   }
-   .randomchar__selected-descriptioniption {
-      display: none;
-   }
-   .randomchar__info {
-      justify-content: space-between;
-      align-items: center;
-   }
-   .randomchar__img {
-      width: 100%;
-      max-height: 100%;
-      min-height: 0px;
-      //   height: 50%;
-   }
-   .char__list {
-      max-width: 50%;
-   }
-   .char__grid {
-      justify-content: center;
-   }
-   .char__info {
-      margin-right: 15px;
-      max-width: 50%;
-      min-width: 0px;
-   }
-   .char__selected-container {
-      padding: 15px;
-      align-items: center;
-   }
-   .char__selected-content {
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-      .button-main,
-      .button-secondary {
-         margin: 0px;
-         width: 150px;
-      }
-      .char__selected-buttons {
-         gap: 10px;
-      }
-   }
-   .char__selected-image {
-      max-width: 100%;
-      max-height: 100%;
-   }
-}
+// @media (max-width: 575.98px) {
+//    .app {
+//       padding: 0px !important;
+//    }
+//    .randomchar {
+//       margin: 20px auto;
+//    }
+//    .randomchar__decoration {
+//       display: none;
+//    }
+//    .randomchar__static {
+//       padding: 15px;
+//       align-items: center;
+//    }
+//    .randomchar__block {
+//       gap: 0px;
+//       justify-content: space-between;
+//       align-items: center;
+//       flex-direction: column;
+//       padding: 15px;
+//    }
+//    .error__message-content {
+//       padding: 15px;
+//    }
+//    .error__message-image {
+//       width: 130px;
+//    }
+//    .randomchar__selected-descriptioniption {
+//       display: none;
+//    }
+//    .randomchar__info {
+//       justify-content: space-between;
+//       align-items: center;
+//    }
+//    .randomchar__img {
+//       width: 100%;
+//       max-height: 100%;
+//       min-height: 0px;
+//       //   height: 50%;
+//    }
+//    .char__list {
+//       max-width: 50%;
+//    }
+//    .char__grid {
+//       justify-content: center;
+//    }
+//    .char__info {
+//       margin-right: 15px;
+//       max-width: 50%;
+//       min-width: 0px;
+//    }
+//    .char__selected-container {
+//       padding: 15px;
+//       align-items: center;
+//    }
+//    .char__selected-content {
+//       flex-direction: column;
+//       align-items: center;
+//       gap: 10px;
+//       .button-main,
+//       .button-secondary {
+//          margin: 0px;
+//          width: 150px;
+//       }
+//       .char__selected-buttons {
+//          gap: 10px;
+//       }
+//    }
+//    .char__selected-image {
+//       max-width: 100%;
+//       max-height: 100%;
+//    }
+// }
 
-@media (max-width: 767.98px) {
-}
+// @media (max-width: 767.98px) {
+// }
 
-@media (max-width: 991.98px) {
-}
+// @media (max-width: 991.98px) {
+// }
 
-@media (max-width: 1199.98px) {
-}
+// @media (max-width: 1199.98px) {
+// }
 
-@media (max-width: 1399.98px) {
-}
+// @media (max-width: 1399.98px) {
+// }

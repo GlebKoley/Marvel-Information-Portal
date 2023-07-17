@@ -16,7 +16,10 @@
    display: flex;
    flex-direction: column;
    justify-content: space-between;
-   // margin-bottom: 55px;
+
+   &:hover {
+      transform: scale(1.05);
+   }
 }
 
 .comics__grid {

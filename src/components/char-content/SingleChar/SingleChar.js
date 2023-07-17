@@ -12,7 +12,6 @@ const SingleChar = () => {
       getSingleCharacter(charId).then((res) => setChar(res));
    }, [charId]);
 
-   console.log(char);
    if (loading || char == null) return <SpinnerBlock />;
 
    return (
@@ -20,7 +19,7 @@ const SingleChar = () => {
          <img className="single_char-container-img" src={char.thumbnail} alt=""></img>
          <div className="single_char-container-descr-wrapper">
             <h1 className="single_char-title">{char.name}</h1>
-            <p className="single_char-descr">{char.description.length > 800 ? char.description.slice(0, 800) + "..." : char.description}</p>
+            <p className="single_char-descr">{char.description.length > 1 ? char.description : "Descripton is not aviable"}</p>
          </div>
       </div>
    );
