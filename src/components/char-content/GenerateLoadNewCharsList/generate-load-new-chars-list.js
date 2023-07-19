@@ -5,6 +5,8 @@ import { SpinnerBlock } from "../../UI/spinner-block/spinner-block";
 import { ModaWindow } from "../../UI/modal-window/modal-window";
 
 const GenerateLoadNewCharsList = ({ newListCharsLoad, setCharacters, resetCharacters }) => {
+   console.log("GenerateLoadNewCharsList render 3");
+
    const { loading, loadNewCharacters } = useMarvelRequestServices();
 
    const [showModal, setShowModal] = useState(false);

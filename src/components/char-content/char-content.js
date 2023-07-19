@@ -7,6 +7,8 @@ import { GenerateSelectedCharContent } from "./GenerateSelectCharContent/generat
 import { FindInputChar } from "./FindInputChar/FindInputChar";
 
 const CharContent = () => {
+   console.log("CharContent render 5");
+
    const { loading, getAllCharacters, getSingleCharacter } = useMarvelRequestServices();
 
    const [characters, setCharacters] = useState([]);
@@ -37,7 +39,6 @@ const CharContent = () => {
          setCharComicsList(res.comics);
       });
    };
-   console.log("render");
 
    const resetCharacters = () => {
       setNewListCharsLoad(true);

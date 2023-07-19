@@ -1,9 +1,10 @@
 import { SpinnerBlock } from "../../UI/spinner-block/spinner-block";
-import { memo } from "react";
 
 const GenerateCharsList = ({ newListCharsLoad, characters, charSelected, selectChar }) => {
+   console.log("GenerateCharsList render 2");
+   console.log(characters);
+
    if (newListCharsLoad) return <SpinnerBlock />;
-   
    else {
       return (
          <>

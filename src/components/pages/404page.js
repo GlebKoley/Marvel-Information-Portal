@@ -1,12 +1,18 @@
 import { Link } from "react-router-dom";
+import styles from "./_404page.module.scss";
 
 const Page404 = () => {
-   const style = { maxWidth: "80%", alignItems: "center" };
    return (
       <div className="container">
-         <div className="content">
-            <img style={style} src="/images/Marvel-Template-404.png" alt="Error"></img>
-            <Link to="/characters">Back to main page</Link>
+         <div className={styles.wrapper}>
+            <h1 className={styles.error}>404 PAGE NOT FOUND</h1>
+            <p className={styles.description}>
+               Check that you typed the address correctly, go back to your previous page or{" "}
+               <Link to="/">
+                  <p className={styles.link}>back to main page</p>
+               </Link>
+            </p>
+            {/* <img style={style} src="/images/Marvel-Template-404.png" alt="Error"></img> */}
          </div>
       </div>
    );

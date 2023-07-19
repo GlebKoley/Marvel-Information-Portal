@@ -64,7 +64,7 @@ const ViewChar = ({ item }) => {
                {item.description.length > 1 ? item.description : "Descripton is not aviable"}
             </p>
          </div>
-         <Link className="back-to-all-button" to="/characters">
+         <Link className="back-to-all-button" to="/">
             Back to all characters
          </Link>
       </div>

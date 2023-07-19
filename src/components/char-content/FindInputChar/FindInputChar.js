@@ -1,11 +1,12 @@
 import { useState, useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useMarvelRequestServices } from "../../../services/marvel-service";
 import { SpinnerBlock } from "../../UI/spinner-block/spinner-block";
 
-const FindInputChar = ({ loading }) => {
+const FindInputChar = () => {
    const { getSingleCharacterByName } = useMarvelRequestServices();
    const charUlRef = useRef(null);
+   const inputRef = useRef(null);
 
    const [charName, setCharName] = useState("");
    const [load, setLoad] = useState(false);
@@ -16,10 +17,12 @@ const FindInputChar = ({ loading }) => {
    const findCharHandler = () => {
       if (charName === "") {
          setEmptyName(true);
+         inputRef.current.focus();
          return;
       } else {
          setEmptyName(false);
          setLoad(true);
+         setRefButtonValue(true);
 
          getSingleCharacterByName(charName).then((res) => {
             setCharList(res.data.results);
@@ -40,6 +43,8 @@ const FindInputChar = ({ loading }) => {
       }
    };
 
+   console.log("FindInputChar render 1");
+
    const changeMaxHeigth = () => {
       setRefButtonValue((value) => !value);
       console.log(refButtonValue);
@@ -57,6 +62,7 @@ const FindInputChar = ({ loading }) => {
             <div className="char__selected-input-find-container">
                <div className="form-container">
                   <input
+                     ref={inputRef}
                      type="text"
                      placeholder="Enter character name"
                      value={charName}
@@ -87,9 +93,9 @@ const FindInputChar = ({ loading }) => {
                      <ul ref={charUlRef} className="char__selected-input-char-list">
                         {charList.map((item) => (
                            <li key={item.id} className="char__selected-input-char-list-item">
-                              <Link to={`${item.id}`} target="_blank">
+                              <NavLink to={`characters/${item.id}`} target="_blank">
                                  {item.name}
-                              </Link>
+                              </NavLink>
                            </li>
                         ))}
                      </ul>

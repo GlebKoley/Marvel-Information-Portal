@@ -5,13 +5,13 @@ const AppHeader = () => {
       <>
          <header className="header">
             <h1 className="title">
-               <Link to="characters">
+               <Link to="/">
                   <span>Marvel</span>
                   information portal
                </Link>
             </h1>
             <nav className="nav">
-               <NavLink className="nav__link__characters" to="characters">
+               <NavLink className="nav__link__characters" to="/">
                   Characters
                </NavLink>
                <span style={{ userSelect: "none" }}>/</span>

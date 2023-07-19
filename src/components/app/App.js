@@ -9,8 +9,8 @@ import { Page404 } from "../pages/404page";
 const router = createBrowserRouter(
    createRoutesFromElements(
       <Route path="/" element={<AppHeader />}>
-         {/* <Route path="/" element={<MainPage />} /> */}
-         <Route path="characters" element={<MainPage />} />
+         <Route index element={<MainPage />} />
+         {/* <Route path="characters" element={<MainPage />} /> */}
          <Route path="characters/:id" element={<SingleContentPage />} />
          <Route path="comics" element={<ComicsListPage />} />
          <Route path="comics/:id" element={<SingleContentPage />} />

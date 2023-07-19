@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 import { SpinnerBlock } from "../../UI/spinner-block/spinner-block";
-import { memo } from "react";
 
 const GenerateSelectedCharContent = ({ loading, charSelected, charComicsList }) => {
+   console.log("GenerateSelectedCharContent render 4");
+
    if (loading || !charSelected) return <SpinnerBlock />;
    else {
       let descriptionValue = "Description is not aviable",
