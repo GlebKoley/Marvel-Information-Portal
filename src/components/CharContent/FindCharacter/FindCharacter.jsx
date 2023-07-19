@@ -1,10 +1,9 @@
 import { useState, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import { useMarvelRequestServices } from "../../../services/marvel-service";
-import { SpinnerBlock } from "../../UI/spinner-block/spinner-block";
+import { SpinnerBlock } from "../../UI/SpinnerBlock/SpinnerBlock";
 
-const FindInputChar = () => {
-   console.log('FindInputChar render 1');
+const FindCharacter = () => {
    const { getSingleCharacterByName } = useMarvelRequestServices();
    const charUlRef = useRef(null);
    const inputRef = useRef(null);
@@ -43,8 +42,6 @@ const FindInputChar = () => {
          findCharHandler();
       }
    };
-
-   console.log("FindInputChar render 1");
 
    const changeMaxHeigth = () => {
       setRefButtonValue((value) => !value);
@@ -113,4 +110,4 @@ const FindInputChar = () => {
    );
 };
 
-export { FindInputChar };
+export { FindCharacter };

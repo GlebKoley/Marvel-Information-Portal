@@ -1,12 +1,12 @@
-import { Link } from "react-router-dom";
-import { SkeletonLoader } from "../../UI/skeleton";
-import { useMarvelRequestServices } from "../../../services/marvel-service";
 import { useEffect, useState } from "react";
-import { SpinnerBlock } from "../../UI/spinner-block/spinner-block";
+import { Link } from "react-router-dom";
 
-const GenerateSelectedCharContent = ({ currentCharSelected }) => {
-   console.log("GenerateSelectedCharContent render 4");
+import { useMarvelRequestServices } from "../../../services/marvel-service";
 
+import { SkeletonLoader } from "../../UI/SkeletonLoader/SkeletonLoader";
+import { SpinnerBlock } from "../../UI/SpinnerBlock/SpinnerBlock";
+
+const SelectedCharContent = ({ currentCharSelected }) => {
    const { getSingleCharacterById, loading } = useMarvelRequestServices();
    const [selectedCharacterContent, setSelectedCharacterContent] = useState([]);
 
@@ -69,4 +69,4 @@ const GenerateSelectedCharContent = ({ currentCharSelected }) => {
    }
 };
 
-export { GenerateSelectedCharContent };
+export { SelectedCharContent };

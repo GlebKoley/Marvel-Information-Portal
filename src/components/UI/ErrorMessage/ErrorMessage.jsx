@@ -1,6 +1,6 @@
 import errorImg from "./error avenger logo.png";
 
-const ErrorMessage = (props) => {
+const ErrorMessage = () => {
    return (
       <div className="error__message-content">
          <p className="error__message-text">

@@ -1,9 +1,9 @@
-import { SpinnerBlock } from "../../UI/spinner-block/spinner-block";
+import { SpinnerBlock } from "../../UI/SpinnerBlock/SpinnerBlock";
 import { useMarvelRequestServices } from "../../../services/marvel-service";
 import { useEffect, useState } from "react";
-import { ModaWindow } from "../../UI/modal-window/modal-window";
+import { ModaWindow } from "../../UI/ModalWindow/ModalWindow";
 
-const GenerateCharsList = ({ selectedСharacter }) => {
+const CharactersLists = ({ selectedСharacter }) => {
    const { getAllCharacters, loadNewCharacters, loading } = useMarvelRequestServices();
 
    const [characters, setCharacters] = useState([]);
@@ -92,4 +92,4 @@ const GenerateCharsList = ({ selectedСharacter }) => {
    );
 };
 
-export { GenerateCharsList };
+export { CharactersLists };

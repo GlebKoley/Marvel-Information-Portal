@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 
 import { useMarvelRequestServices } from "../../services/marvel-service";
-import { ErrorMessage } from "../UI/error-message/error-message";
-import { SpinnerBlock } from "../UI/spinner-block/spinner-block";
+import { ErrorMessage } from "../UI/ErrorMessage/ErrorMessage";
+import { SpinnerBlock } from "../UI/SpinnerBlock/SpinnerBlock";
 
-const Randomchar = () => {
+const RandomCharacterContent = () => {
    const { loading, error, getSingleCharacterById, clearError } = useMarvelRequestServices();
    const [char, setChar] = useState({});
 
@@ -66,4 +66,4 @@ const View = ({ char }) => {
    );
 };
 
-export { Randomchar };
+export { RandomCharacterContent };

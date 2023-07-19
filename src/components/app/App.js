@@ -1,10 +1,10 @@
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from "react-router-dom";
 
-import { AppHeader } from "../app-header/app-header";
-import { MainPage } from "../pages/main-page";
-import { ComicsListPage } from "../pages/comics-list-page";
-import { SingleContentPage } from "../pages/single-content-page";
-import { Page404 } from "../pages/404page";
+import { AppHeader } from "../AppHeader/AppHeader";
+import { MainPage } from "../Pages/MainPage";
+import { ComicsListPage } from "../Pages/ComicsListsPage";
+import { SingleContentPage } from "../Pages/SingleContentPage";
+import { Page404 } from "../Pages/404page";
 
 const router = createBrowserRouter(
    createRoutesFromElements(

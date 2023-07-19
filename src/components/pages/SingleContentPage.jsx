@@ -1,7 +1,7 @@
-import { AppBanner } from "../app-banner/app-banner";
+import { AppBanner } from "../AppBanner/AppBanner";
 import { OnePageContent } from "../OnePageContent/OnePageContent";
 
-const SingleContentPage = (props) => {
+const SingleContentPage = () => {
    return (
       <div className="container">
          <AppBanner />

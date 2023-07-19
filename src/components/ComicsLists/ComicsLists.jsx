@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import { useMarvelRequestServices } from "../../services/marvel-service";
-import { SpinnerBlock } from "../UI/spinner-block/spinner-block";
+import { SpinnerBlock } from "../UI/SpinnerBlock/SpinnerBlock";
 
 const ComicsList = () => {
    const { getComicsList, loading } = useMarvelRequestServices();
@@ -14,7 +14,6 @@ const ComicsList = () => {
 
    const newComicsLoadHandler = () => {
       localStorage.setItem("currentOffsetComics", +localStorage.getItem("currentOffsetComics") + 9);
-      console.log("dawdawdawd");
       getComicsList().then((res) => setComiscList([...comiscList, ...res]));
    };
 

@@ -1,19 +1,20 @@
 @import "./reset";
 @import "./variable";
 
-@import "../components/random-char/random-char";
-@import "../components/app-banner/app-banner";
-@import "../components/app-header/app-header";
-@import "../components/char-content/char-content";
-@import "../components/comics-list/comics-list";
-@import "../components/char-content/GenerateCharList/generate-char-list";
-@import "../components/char-content/GenerateLoadNewCharsList/generate-load-new-chars-list";
-@import "../components/char-content/GenerateSelectCharContent/generate-select-char-content";
+@import "../components/RandomCharacterContent/RandomCharacterContent";
+@import "../components/AppBanner/AppBanner";
+@import "../components/AppHeader/AppHeader";
+@import "../components/CharContent/CharContent";
+@import "../components/ComicsLists/ComicsLists";
+@import "../components/CharContent/CharactersLists/CharactersLists";
+@import "../components/CharContent/SelectedCharContent/SelectedCharContent";
+@import "../components/CharContent/FindCharacter/FindCharacter";
+@import "../components/OnePageContent/OnePageContent";
+
 @import "../components/UI/scroll-up-button/scroll-up-button";
 @import "../components/UI/modal-window/modal-window";
 @import "../components/UI/error-message/error-message";
-@import "../components/OnePageContent/OnePageContent";
-@import "../components/char-content/FindInputChar/FindInputChar";
+
 * {
    font-family: "Roboto Condensed", sans-serif;
 }

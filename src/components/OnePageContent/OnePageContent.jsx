@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams, useLocation, Link } from "react-router-dom";
 
 import { useMarvelRequestServices } from "../../services/marvel-service";
-import { SpinnerBlock } from "../UI/spinner-block/spinner-block";
+import { SpinnerBlock } from "../UI/SpinnerBlock/SpinnerBlock";
 
 const OnePageContent = () => {
    let location = useLocation();
