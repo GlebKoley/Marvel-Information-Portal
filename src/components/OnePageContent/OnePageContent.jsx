@@ -7,7 +7,7 @@ import { SpinnerBlock } from "../UI/spinner-block/spinner-block";
 const OnePageContent = () => {
    let location = useLocation();
    const { id } = useParams();
-   const { getSingleCharacter, getComicsById, loading } = useMarvelRequestServices();
+   const { getSingleCharacterById, getComicsById, loading } = useMarvelRequestServices();
    const [item, setItem] = useState(null);
    const [currItem, setCurrItem] = useState();
 
@@ -16,7 +16,7 @@ const OnePageContent = () => {
          getComicsById(id).then((res) => setItem(res));
          setCurrItem("comics");
       } else {
-         getSingleCharacter(id).then((res) => setItem(res));
+         getSingleCharacterById(id).then((res) => setItem(res));
          setCurrItem("character");
       }
    }, [id]);

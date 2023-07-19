@@ -5,7 +5,7 @@ import { ErrorMessage } from "../UI/error-message/error-message";
 import { SpinnerBlock } from "../UI/spinner-block/spinner-block";
 
 const Randomchar = () => {
-   const { loading, error, getSingleCharacter, clearError } = useMarvelRequestServices();
+   const { loading, error, getSingleCharacterById, clearError } = useMarvelRequestServices();
    const [char, setChar] = useState({});
 
    useEffect(() => {
@@ -15,7 +15,7 @@ const Randomchar = () => {
    const updateChar = () => {
       clearError();
       const id = Math.floor(Math.random() * (1011400 - 1011000) + 1011000);
-      getSingleCharacter(id).then(onCharLoaded);
+      getSingleCharacterById(id).then(onCharLoaded);
    };
 
    const onCharLoaded = (char) => {
@@ -45,9 +45,7 @@ const View = ({ char }) => {
    const { name, description, thumbnail, homepage, wiki } = char;
    return (
       <div className="randomchar__block">
-         {/* <div className="randomchar__img-flex"> */}
          <img className="randomchar__block-img" src={thumbnail} alt=""></img>
-         {/* </div> */}
          <div className="randomchar__block-info">
             <h1 className="randomchar__name">{name}</h1>
             <p className="randomchar__selected-descriptioniption">{description ? description : "Description is not aviable"}</p>
@@ -64,9 +62,6 @@ const View = ({ char }) => {
                </button>
             </div>
          </div>
-         {/* <div className="randomchar__selected-buttons"> */}
-
-         {/* </div> */}
       </div>
    );
 };

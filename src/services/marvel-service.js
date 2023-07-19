@@ -35,7 +35,7 @@ const useMarvelRequestServices = () => {
       return res.data.results.map(_transformCharacter);
    };
 
-   const getSingleCharacter = async (id) => {
+   const getSingleCharacterById = async (id) => {
       const res = await request(`${_apiBase}characters/${id}?${_apiKey}`);
       return _transformCharacter(res.data.results[0]);
    };
@@ -97,7 +97,7 @@ const useMarvelRequestServices = () => {
       loading,
       error,
       getAllCharacters,
-      getSingleCharacter,
+      getSingleCharacterById,
       getSingleCharacterByName,
       loadNewCharacters,
       getComicsList,

@@ -3,8 +3,9 @@ import ReaсtDOM from "react-dom";
 
 const portal = document.querySelector("#modal__window-portal");
 
-const ModaWindow = ({ setShowModal, resetCharacters }) => {
+const ModaWindow = ({ setShowModal, resetAllCharacters }) => {
    const [modalOpenValue, setModalOpenValue] = useState(true);
+
    const closeModal = () => {
       setModalOpenValue(false);
       setShowModal(false);
@@ -25,16 +26,16 @@ const ModaWindow = ({ setShowModal, resetCharacters }) => {
                   <button
                      className="button-main"
                      onClick={() => {
-                        resetCharacters();
+                        resetAllCharacters();
                         closeModal();
                      }}>
                      RESET
                   </button>
                </div>
-               <div style={{ fontSize: "15px" }}>
-                  <p>don`t show me this window</p>
-                  <input type="checkbox"></input>
-               </div>
+               {/* <div style={{ fontSize: "15px" }}> */}
+               {/* <p>don`t show me this window</p> */}
+               {/* <input type="checkbox"></input> */}
+               {/* </div> */}
                <button>
                   <img className="modal__close-button" src="../images/close-icon.svg" alt="" onClick={() => closeModal()}></img>
                </button>

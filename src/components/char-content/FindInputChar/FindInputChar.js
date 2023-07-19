@@ -1,9 +1,10 @@
 import { useState, useRef } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useMarvelRequestServices } from "../../../services/marvel-service";
 import { SpinnerBlock } from "../../UI/spinner-block/spinner-block";
 
 const FindInputChar = () => {
+   console.log('FindInputChar render 1');
    const { getSingleCharacterByName } = useMarvelRequestServices();
    const charUlRef = useRef(null);
    const inputRef = useRef(null);

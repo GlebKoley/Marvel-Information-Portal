@@ -1,8 +1,12 @@
 .char__selected {
+   max-width: 425px;
+
    // min-width: 35%;
    flex-basis: 425px;
 
    &-container {
+      max-width: 425px;
+
       display: flex;
       flex-direction: column;
 
@@ -27,7 +31,7 @@
    }
 
    &-description {
-      margin-top: 10px;
+      margin-top: 20px;
       font-size: 16px;
       line-height: 18px;
 
@@ -35,7 +39,7 @@
          font-weight: bold;
          font-size: 16px;
          line-height: 24px;
-         margin-top: 10px;
+         margin-top: 20px;
       }
    }
 

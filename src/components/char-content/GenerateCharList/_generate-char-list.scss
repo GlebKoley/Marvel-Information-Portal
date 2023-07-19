@@ -35,7 +35,7 @@
    transform: translateY(-8px);
 }
 
-.char__item.char__item_selected {
+.char__item.selected {
    box-shadow: 0 5px 20px #9f0013;
    transform: translateY(-8px);
 }
@@ -51,6 +51,18 @@
 .char__name-text {
    margin: 0;
    max-height: 90px;
+}
+
+.char__list-buttons {
+   margin-top: 40px;
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+   grid-gap: 30px;
+   .button-main,
+   .button-secondary {
+      width: 200px;
+   }
 }
 
 //!  MEDIA  /////////////////////////////////////////////////////////
