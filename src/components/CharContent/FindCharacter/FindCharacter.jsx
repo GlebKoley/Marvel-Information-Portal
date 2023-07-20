@@ -49,7 +49,9 @@ const FindCharacter = () => {
       if (!refButtonValue) {
          charUlRef.current.style.maxHeight = `160px`;
       } else {
-         charUlRef.current.style.maxHeight = `1000px`;
+         // charUlRef.current.style.minHeight = "160px";
+         charUlRef.current.style.maxHeight = `unset`;
+         console.log(charUlRef.current);
       }
    };
 

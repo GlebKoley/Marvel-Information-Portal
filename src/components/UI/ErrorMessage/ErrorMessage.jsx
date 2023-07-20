@@ -1,4 +1,4 @@
-import errorImg from "./error avenger logo.png";
+import errorImg from "./ErrorImage.png";
 
 const ErrorMessage = () => {
    return (
@@ -6,7 +6,6 @@ const ErrorMessage = () => {
          <p className="error__message-text">
             Sorry ! An error occurred while loading the character. Please click <span>TRY IT</span> button again.
          </p>
-         {/* <p className="error__message-text">{props.children}</p> */}
          <img className="error__message-image" src={errorImg} alt="" draggable="false"></img>
       </div>
    );

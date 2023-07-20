@@ -1,4 +1,6 @@
 import { Link, NavLink, Outlet } from "react-router-dom";
+import { Suspense } from "react";
+import { SpinnerBlock } from "../UI/SpinnerBlock/SpinnerBlock";
 
 const AppHeader = () => {
    return (
@@ -20,11 +22,11 @@ const AppHeader = () => {
                </NavLink>
             </nav>
          </header>
-         <>
+         <Suspense fallback={<SpinnerBlock />}>
             <Outlet />
-         </>
+         </Suspense>
       </>
    );
 };
 
-export { AppHeader };
+export default AppHeader;

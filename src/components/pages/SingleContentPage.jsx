@@ -10,4 +10,4 @@ const SingleContentPage = () => {
    );
 };
 
-export { SingleContentPage };
+export default SingleContentPage;

@@ -12,10 +12,9 @@ const Page404 = () => {
                   <p className={styles.link}>back to main page</p>
                </Link>
             </p>
-            {/* <img style={style} src="/images/Marvel-Template-404.png" alt="Error"></img> */}
          </div>
       </div>
    );
 };
 
-export { Page404 };
+export default Page404;

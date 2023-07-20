@@ -28,4 +28,4 @@ const CharContent = () => {
    );
 };
 
-export { CharContent };
+export default CharContent;

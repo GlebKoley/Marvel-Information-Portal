@@ -10,4 +10,4 @@ const ComicsListPage = () => {
    );
 };
 
-export { ComicsListPage };
+export default ComicsListPage;

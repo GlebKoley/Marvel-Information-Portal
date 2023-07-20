@@ -66,4 +66,4 @@ const View = ({ char }) => {
    );
 };
 
-export { RandomCharacterContent };
+export default RandomCharacterContent;

@@ -1,5 +1,5 @@
-import { RandomCharacterContent } from "../RandomCharacterContent/RandomCharacterContent";
-import { CharContent } from "../CharContent/CharContent";
+import RandomCharacterContent from "../RandomCharacterContent/RandomCharacterContent";
+import CharContent from "../CharContent/CharContent";
 
 const MainPage = () => {
    return (
@@ -11,4 +11,4 @@ const MainPage = () => {
    );
 };
 
-export { MainPage };
+export default MainPage;
