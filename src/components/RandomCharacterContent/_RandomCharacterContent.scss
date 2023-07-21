@@ -146,4 +146,19 @@
    text-align: center;
 }
 
+.randomchar__block__animation {
+   &-appear {
+      opacity: 0;
+   }
+   &-appear-active {
+      opacity: 1;
+      transition: opacity 400ms ease-in;
+   }
+   &-appear-done {
+      opacity: 1;
+
+      transition: opacity 400ms ease-in;
+   }
+}
+
 //!  MEDIA  /////////////////////////////////////////////////////////

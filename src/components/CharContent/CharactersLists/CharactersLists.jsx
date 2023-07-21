@@ -65,10 +65,10 @@ const CharactersLists = ({ selectedСharacter }) => {
 
    return (
       <>
-         <CSSTransition classNames="char__grid__animation" timeout={600} in={listsAppearAnimation} appear={true}>
+         <CSSTransition classNames="char__grid__animation" timeout={500} in={listsAppearAnimation} appear={true}>
             <TransitionGroup component={"ul"} className="char__grid">
                {characters.map((item) => (
-                  <CSSTransition key={item.id} classNames="char__list__animation" timeout={600}>
+                  <CSSTransition key={item.id} classNames="char__list__animation" timeout={500}>
                      <li
                         className={backgroundCharById === item.id ? "char__item selected" : "char__item"}
                         onClick={() => charIdHandler(item.id)}>

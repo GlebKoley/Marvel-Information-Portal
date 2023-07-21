@@ -71,12 +71,12 @@
    }
    &-appear-active {
       opacity: 1;
-      transition: opacity 600ms ease-in;
+      transition: opacity 500ms ease-in;
    }
    &-appear-done {
       opacity: 1;
 
-      transition: opacity 600ms ease-in;
+      transition: opacity 500ms ease-in;
    }
 }
 
@@ -86,14 +86,14 @@
    }
    &-enter-active {
       opacity: 1;
-      transition: opacity 600ms ease-in;
+      transition: all 500ms ease-in;
    }
    &-exit {
       opacity: 1;
    }
    &-exit-active {
       opacity: 0;
-      transition: opacity 600ms ease-in;
+      transition: all 500ms ease-in;
    }
 }
 

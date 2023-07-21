@@ -9,7 +9,7 @@ const FindCharacter = () => {
    const charUlRef = useRef(null);
    const inputRef = useRef(null);
 
-   const [charName, setCharName] = useState("a");
+   const [charName, setCharName] = useState("");
    const [load, setLoad] = useState(false);
    const [emptyName, setEmptyName] = useState(false);
    const [charList, setCharList] = useState(null);

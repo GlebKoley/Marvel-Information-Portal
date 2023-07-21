@@ -8,6 +8,7 @@ const CharContent = () => {
    const scrollRef = useRef(null);
    const [currentCharSelected, setCurrentCharSelected] = useState(null);
 
+
    const selectedСharacter = (id) => {
       if (window.pageYOffset > 800) scrollRef.current.scrollIntoView({ behavior: "smooth" });
       setCurrentCharSelected(id);
