@@ -2,13 +2,14 @@ import { useState, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import { useMarvelRequestServices } from "../../../services/marvel-service";
 import { SpinnerBlock } from "../../UI/SpinnerBlock/SpinnerBlock";
+import { CSSTransition } from "react-transition-group";
 
 const FindCharacter = () => {
    const { getSingleCharacterByName } = useMarvelRequestServices();
    const charUlRef = useRef(null);
    const inputRef = useRef(null);
 
-   const [charName, setCharName] = useState("");
+   const [charName, setCharName] = useState("a");
    const [load, setLoad] = useState(false);
    const [emptyName, setEmptyName] = useState(false);
    const [charList, setCharList] = useState(null);
@@ -45,14 +46,6 @@ const FindCharacter = () => {
 
    const changeMaxHeigth = () => {
       setRefButtonValue((value) => !value);
-      console.log(refButtonValue);
-      if (!refButtonValue) {
-         charUlRef.current.style.maxHeight = `160px`;
-      } else {
-         // charUlRef.current.style.minHeight = "160px";
-         charUlRef.current.style.maxHeight = `unset`;
-         console.log(charUlRef.current);
-      }
    };
 
    return (
@@ -90,15 +83,17 @@ const FindCharacter = () => {
                charList !== null && (
                   <>
                      <p style={{ color: "#03710E", fontSize: "18px" }}>{charList.length} characters were found by this name</p>
-                     <ul ref={charUlRef} className="char__selected-input-char-list">
-                        {charList.map((item) => (
-                           <li key={item.id} className="char__selected-input-char-list-item">
-                              <NavLink to={`characters/${item.id}`} target="_blank">
-                                 {item.name}
-                              </NavLink>
-                           </li>
-                        ))}
-                     </ul>
+                     <CSSTransition in={refButtonValue} timeout={1000} classNames="animated__lists">
+                        <ul ref={charUlRef} className="char__selected-input-char-list">
+                           {charList.map((item) => (
+                              <li key={item.id} className="char__selected-input-char-list-item">
+                                 <NavLink to={`characters/${item.id}`} target="_blank">
+                                    {item.name}
+                                 </NavLink>
+                              </li>
+                           ))}
+                        </ul>
+                     </CSSTransition>
                      {charList !== null && charList.length > 5 && (
                         <button className="button-main" onClick={changeMaxHeigth}>
                            {refButtonValue ? "Show all" : "Hide"}
