@@ -69,7 +69,7 @@ const SelectedCharContent = ({ currentCharSelected }) => {
                               key={+comic.resourceURI.match(/\w+$/gm)}
                               classNames="char__selected-comics-list-animation"
                               appear={true}
-                              timeout={200}>
+                              timeout={600}>
                               <li>
                                  <Link
                                     className="char__selected-comics-list-item"

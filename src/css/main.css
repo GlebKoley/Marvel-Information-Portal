@@ -1064,24 +1064,29 @@ legend {
   background: rgb(44, 42, 42);
 }
 
-.modal__animation-enter {
+.modal__window__animation-appear {
   opacity: 0;
 }
-
-.modal__animation-active {
+.modal__window__animation-appear-active {
   opacity: 1;
-  -webkit-transition: opacity 200ms;
-  transition: opacity 200ms;
+  -webkit-transition: all 300ms ease-in;
+  transition: all 300ms ease-in;
 }
-
-.modal__animation-exit {
+.modal__window__animation-appear-done {
   opacity: 1;
+  -webkit-transition: all 300ms ease-in;
+  transition: all 300ms ease-in;
 }
-
-.modal__animation-exit-active {
+.modal__window__animation-exit {
   opacity: 0;
-  -webkit-transition: opacity 200ms;
-  transition: opacity 200ms;
+}
+.modal__window__animation-exit-active {
+  opacity: 1;
+  -webkit-transition: all 300ms ease-in;
+  transition: all 300ms ease-in;
+}
+.modal__window__animation-exit-done {
+  opacity: 1;
 }
 
 .error__message-content {
