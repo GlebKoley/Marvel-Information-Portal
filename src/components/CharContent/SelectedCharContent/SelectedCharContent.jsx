@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { useTrail, useSpring, animated } from "@react-spring/web";
+import { useTrail, useSpring, animated, config } from "@react-spring/web";
 import { useMarvelRequestServices } from "../../../services/marvel-service";
 
 import { SkeletonLoader } from "../../UI/SkeletonLoader/SkeletonLoader";
@@ -24,20 +24,21 @@ const SelectedCharContent = ({ currentCharSelected }) => {
    const [animatedComicsList, api] = useTrail(
       selectedCharacterContent?.comics?.length > 0 ? selectedCharacterContent.comics.length : 10,
       () => ({
-         from: { transform: "translateX(-40px)" },
-         config: { mass: 4, tension: 3000, friction: 100 },
+         from: { transform: "translateX(100px)" },
+         // config: { ...config.gentle, duration: 100 },
+         config: { mass: 1, tension: 3000, friction: 100 },
       })
    );
 
    const [animatedCharContetn, apiTwo] = useSpring(() => ({
-      from: { transform: "translateX(-40px)" },
+      from: { transform: "translateX(100px)" },
       config: { mass: 2, tension: 1500, friction: 100 },
    }));
 
    const handleClick = () => {
       api.start({
          from: {
-            transform: "translateX(-40px)",
+            transform: "translateX(100px)",
          },
          to: {
             transform: "translateX(0px)",
@@ -45,7 +46,7 @@ const SelectedCharContent = ({ currentCharSelected }) => {
       });
       apiTwo.start({
          from: {
-            transform: "translateX(-40px)",
+            transform: "translateX(100px)",
          },
          to: {
             transform: "translateX(0px)",

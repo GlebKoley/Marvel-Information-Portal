@@ -6,6 +6,7 @@
    display: grid;
    grid-template-columns: repeat(2, 50%);
    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.25);
+   overflow: hidden;
 }
 
 .randomchar__block {
@@ -144,21 +145,6 @@
    font-size: 18px;
    line-height: 24px;
    text-align: center;
-}
-
-.randomchar__block__animation {
-   &-appear {
-      opacity: 0;
-   }
-   &-appear-active {
-      opacity: 1;
-      transition: opacity 400ms ease-in;
-   }
-   &-appear-done {
-      opacity: 1;
-
-      transition: opacity 400ms ease-in;
-   }
 }
 
 //!  MEDIA  /////////////////////////////////////////////////////////

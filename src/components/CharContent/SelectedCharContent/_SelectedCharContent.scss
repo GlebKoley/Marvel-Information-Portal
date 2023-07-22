@@ -4,6 +4,7 @@
 
    &-container {
       max-width: 425px;
+      overflow: hidden;
 
       display: flex;
       flex-direction: column;

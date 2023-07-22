@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { CSSTransition } from "react-transition-group";
+import { animated, useSpring, config } from "@react-spring/web";
 
 import { useMarvelRequestServices } from "../../services/marvel-service";
 import { ErrorMessage } from "../UI/ErrorMessage/ErrorMessage";
@@ -16,16 +16,39 @@ const RandomCharacterContent = () => {
    const updateChar = () => {
       clearError();
       const id = Math.floor(Math.random() * (1011400 - 1011000) + 1011000);
-      getSingleCharacterById(id).then(onCharLoaded);
+      getSingleCharacterById(id)
+         .then(onCharLoaded)
+         .then(() => handleClick());
    };
 
    const onCharLoaded = (char) => {
       setChar(char);
    };
 
+   const [props, api] = useSpring(
+      () => ({
+         from: { transform: "translateY(-500px)", opacity: 0 },
+         config: config.stiff,
+      }),
+      []
+   );
+
+   const handleClick = () => {
+      api.start({
+         from: {
+            transform: "translateY(-500px)",
+            opacity: 0,
+         },
+         to: {
+            transform: "translateY(0px)",
+            opacity: 1,
+         },
+      });
+   };
+
    return (
       <div className="randomchar">
-         {error ? <ErrorMessage /> : loading ? <SpinnerBlock /> : <View char={char} />}
+         {error ? <ErrorMessage /> : loading ? <SpinnerBlock /> : <View char={char} props={props} />}
          <div className="randomchar__static">
             <p className="randomchar__static-title">
                Random character for today!
@@ -42,10 +65,10 @@ const RandomCharacterContent = () => {
    );
 };
 
-const View = ({ char }) => {
+const View = ({ char, props }) => {
    const { name, description, thumbnail, homepage, wiki } = char;
    return (
-      <CSSTransition classNames="randomchar__block__animation" in={true} appear={true} timeout={400}>
+      <animated.div style={props}>
          <div className="randomchar__block">
             <img className="randomchar__block-img" src={thumbnail} alt=""></img>
             <div className="randomchar__block-info">
@@ -65,7 +88,7 @@ const View = ({ char }) => {
                </div>
             </div>
          </div>
-      </CSSTransition>
+      </animated.div>
    );
 };
 

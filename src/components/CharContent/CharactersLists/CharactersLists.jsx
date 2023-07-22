@@ -1,14 +1,13 @@
 import { SpinnerBlock } from "../../UI/SpinnerBlock/SpinnerBlock";
 import { useMarvelRequestServices } from "../../../services/marvel-service";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { ModaWindow } from "../../UI/ModalWindow/ModalWindow";
-import { TransitionGroup, CSSTransition } from "react-transition-group";
+import { useSpring, animated, config } from "@react-spring/web";
 
 const CharactersLists = ({ selectedСharacter }) => {
    const { getAllCharacters, loadNewCharacters, loading } = useMarvelRequestServices();
-
+   const charGridRef = useRef();
    const [characters, setCharacters] = useState([]);
-   const [listsAppearAnimation, setListsAppearAnimation] = useState(false);
    const [backgroundCharById, setBackgroundCharById] = useState(null);
    const [resetLoading, setResetLoading] = useState(false);
 
@@ -16,15 +15,15 @@ const CharactersLists = ({ selectedСharacter }) => {
    const [charEnded, setCharEnded] = useState(false);
 
    useEffect(() => {
-      getAllCharacters().then((res) => {
-         setCharacters([...res]);
-      });
-      setListsAppearAnimation(true);
+      getAllCharacters()
+         .then((res) => {
+            setCharacters([...res]);
+         })
+         .then(() => handleClick());
    }, []);
 
    const charIdHandler = (id) => {
       setBackgroundCharById(id);
-
       selectedСharacter(id);
    };
 
@@ -61,24 +60,48 @@ const CharactersLists = ({ selectedСharacter }) => {
       setShowModal(true);
    };
 
+   const [props, api] = useSpring(
+      () => ({
+         from: { transform: "translateY(500px)", opacity: 0 },
+         config: config.default,
+         onStart: () => console.log("start"),
+      }),
+      []
+   );
+
+   const handleClick = () => {
+      api.start({
+         from: {
+            transform: "translateY(500px)",
+            opacity: 0,
+         },
+         to: {
+            transform: "translateY(0px)",
+            opacity: 1,
+         },
+      });
+   };
+
+   // useEffect(() => {
+   // }, [charGridRef]);
+
    if (characters.length < 1 || resetLoading) return <SpinnerBlock />;
 
    return (
       <>
-         <CSSTransition classNames="char__grid__animation" timeout={500} in={listsAppearAnimation} appear={true}>
-            <TransitionGroup component={"ul"} className="char__grid">
+         <animated.div style={props}>
+            <ul className="char__grid" ref={charGridRef}>
                {characters.map((item) => (
-                  <CSSTransition key={item.id} classNames="char__list__animation" timeout={500}>
-                     <li
-                        className={backgroundCharById === item.id ? "char__item selected" : "char__item"}
-                        onClick={() => charIdHandler(item.id)}>
-                        <img className="char__img" src={item.thumbnail} alt=""></img>
-                        <div className="char__name-container">{item.name}</div>
-                     </li>
-                  </CSSTransition>
+                  <li
+                     className={backgroundCharById === item.id ? "char__item selected" : "char__item"}
+                     onClick={() => charIdHandler(item.id)}
+                     key={item.id}>
+                     <img className="char__img" src={item.thumbnail} alt=""></img>
+                     <div className="char__name-container">{item.name}</div>
+                  </li>
                ))}
-            </TransitionGroup>
-         </CSSTransition>
+            </ul>
+         </animated.div>
 
          {loading ? (
             <SpinnerBlock />
