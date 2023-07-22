@@ -647,9 +647,12 @@ legend {
 .char__selected-image {
   -webkit-box-shadow: 4px 4px 2px;
           box-shadow: 4px 4px 2px;
-  max-width: 50%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  width: 150px;
+  max-width: 150px;
+  max-height: 150px;
+  height: 150px;
+  -o-object-fit: fill;
+     object-fit: fill;
 }
 .char__selected-description {
   margin-top: 20px;
@@ -723,39 +726,6 @@ legend {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 20px;
-}
-
-.char__selected__content__animation-appear {
-  opacity: 0;
-}
-.char__selected__content__animation-appear-active {
-  opacity: 1;
-  -webkit-transition: opacity 300ms ease-in;
-  transition: opacity 300ms ease-in;
-}
-.char__selected__content__animation-appear-done {
-  opacity: 1;
-  -webkit-transition: opacity 300ms ease-in;
-  transition: opacity 300ms ease-in;
-}
-
-.char__selected-comics-list-animation-appear {
-  -webkit-transform: translateX(-25px);
-          transform: translateX(-25px);
-  -webkit-transform-origin: left;
-          transform-origin: left;
-}
-.char__selected-comics-list-animation-appear-active {
-  -webkit-transform: translateX(0px);
-          transform: translateX(0px);
-  -webkit-transition: all 200ms ease-in;
-  transition: all 200ms ease-in;
-}
-.char__selected-comics-list-animation-appear-done {
-  -webkit-transform: translateX(0px);
-          transform: translateX(0px);
-  -webkit-transition: all 200ms ease-in;
-  transition: all 200ms ease-in;
 }
 
 .char__selected-input-find {
