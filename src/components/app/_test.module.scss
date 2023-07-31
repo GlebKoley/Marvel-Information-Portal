@@ -4,14 +4,17 @@
    margin: 50px auto;
    display: flex;
    flex-direction: column;
-   gap: 20px;
-   justify-content: space-around;
+   justify-content: center;
    align-items: center;
    background-color: rgb(49, 47, 47);
+   position: relative;
 }
 .button {
+   display: block;
+   position: absolute;
+   top: 30px;
    height: 70px;
-   width: 200px;
+   width: 80%;
    background-color: rgb(138, 48, 48);
    border-radius: 40px;
    &:hover {
@@ -23,9 +26,13 @@
 }
 
 .ul {
+   border: 2px solid white;
+   overflow: hidden;
    padding: 20px;
    color: white;
+   margin-top: 50px;
    li {
+      font-size: 20px;
       margin-bottom: 10px;
    }
 }

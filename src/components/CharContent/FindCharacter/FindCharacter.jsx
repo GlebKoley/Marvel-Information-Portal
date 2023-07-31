@@ -2,7 +2,6 @@ import { useState, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import { useMarvelRequestServices } from "../../../services/marvel-service";
 import { SpinnerBlock } from "../../UI/SpinnerBlock/SpinnerBlock";
-import { CSSTransition } from "react-transition-group";
 
 const FindCharacter = () => {
    const { getSingleCharacterByName } = useMarvelRequestServices();
@@ -83,17 +82,15 @@ const FindCharacter = () => {
                charList !== null && (
                   <>
                      <p style={{ color: "#03710E", fontSize: "18px" }}>{charList.length} characters were found by this name</p>
-                     <CSSTransition in={refButtonValue} timeout={1000} classNames="animated__lists">
-                        <ul ref={charUlRef} className="char__selected-input-char-list">
-                           {charList.map((item) => (
-                              <li key={item.id} className="char__selected-input-char-list-item">
-                                 <NavLink to={`characters/${item.id}`} target="_blank">
-                                    {item.name}
-                                 </NavLink>
-                              </li>
-                           ))}
-                        </ul>
-                     </CSSTransition>
+                     <ul ref={charUlRef} className="char__selected-input-char-list">
+                        {charList.map((item) => (
+                           <li key={item.id} className="char__selected-input-char-list-item">
+                              <NavLink to={`characters/${item.id}`} target="_blank">
+                                 {item.name}
+                              </NavLink>
+                           </li>
+                        ))}
+                     </ul>
                      {charList !== null && charList.length > 5 && (
                         <button className="button-main" onClick={changeMaxHeigth}>
                            {refButtonValue ? "Show all" : "Hide"}
