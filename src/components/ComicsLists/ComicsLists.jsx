@@ -1,28 +1,17 @@
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-import { useMarvelRequestServices } from "../../services/marvel-service";
 import { SpinnerBlock } from "../UI/SpinnerBlock/SpinnerBlock";
+import { useInfinityQueryContent } from "../../hooks/useInfinityQueryContent";
 
 const ComicsList = () => {
-   const { getComicsList, loading } = useMarvelRequestServices();
-   const [comiscList, setComiscList] = useState([]);
+   const { data, fetchNextPage, isFetchingNextPage, isLoading } = useInfinityQueryContent({ queryName: "comics", offset: null });
 
-   useEffect(() => {
-      getComicsList().then((res) => setComiscList(res));
-   }, []);
-
-   const newComicsLoadHandler = () => {
-      localStorage.setItem("currentOffsetComics", +localStorage.getItem("currentOffsetComics") + 9);
-      getComicsList().then((res) => setComiscList([...comiscList, ...res]));
-   };
-
-   if (comiscList.length < 1) return <SpinnerBlock />;
+   if (isLoading) return <SpinnerBlock />;
 
    return (
       <div className="comics__list">
          <ul className="comics__grid">
-            {comiscList.map((item) => {
+            {data.map((item) => {
                let priceNotZero = "";
                item.price === 0 ? (priceNotZero = "NOT AVAILABLE") : (priceNotZero = `${+item.price}$`);
 
@@ -37,10 +26,10 @@ const ComicsList = () => {
                );
             })}
          </ul>
-         {loading ? (
+         {isFetchingNextPage ? (
             <SpinnerBlock />
          ) : (
-            <button className="button-main" onClick={newComicsLoadHandler}>
+            <button className="button-main" onClick={() => fetchNextPage()}>
                LOAD MORE
             </button>
          )}

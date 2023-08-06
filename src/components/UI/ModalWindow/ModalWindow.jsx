@@ -18,8 +18,8 @@ const ModaWindow = ({ setShowModal, resetAllCharacters }) => {
             <div className="modal__content" onClick={(e) => e.stopPropagation()}>
                <p className="modal__header">Do you want to reset characters ?</p>
                <p className="modal__body">
-                  The entire grid of characters that is currently available on the site will be reset. After the reset, <span>9</span> new
-                  characters will be loaded from the server.
+                  The entire grid of characters that is currently available on the site will be reset. After the reset, <span>9</span> new characters will be
+                  loaded from the server.
                </p>
 
                <div className="modal__buttons">
@@ -39,11 +39,7 @@ const ModaWindow = ({ setShowModal, resetAllCharacters }) => {
                <button>
                   <img className="modal__close-button" src="../images/close-icon.svg" alt="" onClick={() => closeModal()}></img>
                </button>
-               <img
-                  className="modal__logo-img"
-                  src={process.env.PUBLIC_URL + "/images/marvel modal logo.png"}
-                  alt=""
-                  draggable="false"></img>
+               <img className="modal__logo-img" src={process.env.PUBLIC_URL + "/images/marvel modal logo.png"} alt="" draggable="false"></img>
             </div>
          </div>,
          portal

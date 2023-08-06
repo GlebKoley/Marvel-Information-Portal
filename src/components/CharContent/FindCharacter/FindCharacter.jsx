@@ -1,37 +1,46 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
+import { useGetCharByName } from "../../../hooks/useGetCharByName";
+import { useQuery } from "@tanstack/react-query";
+
 import { NavLink } from "react-router-dom";
-import { useMarvelRequestServices } from "../../../services/marvel-service";
+import { api } from "../../../services/api";
+
 import { SpinnerBlock } from "../../UI/SpinnerBlock/SpinnerBlock";
 
 const FindCharacter = () => {
-   const { getSingleCharacterByName } = useMarvelRequestServices();
+   const { request } = api();
    const charUlRef = useRef(null);
    const inputRef = useRef(null);
 
    const [charName, setCharName] = useState("");
-   const [load, setLoad] = useState(false);
+   const [findCharByName, setFindCharByName] = useState("");
    const [emptyName, setEmptyName] = useState(false);
-   const [charList, setCharList] = useState(null);
    const [refButtonValue, setRefButtonValue] = useState(true);
 
+   const [requestik, setRequest] = useState(false);
+
+   // const { charByNameQuery } = useGetCharByName(findCharByName);
+
    const findCharHandler = () => {
+      console.log(findCharByName);
       if (charName === "") {
          setEmptyName(true);
          inputRef.current.focus();
          return;
       } else {
+         setRequest(true);
          setEmptyName(false);
-         setLoad(true);
          setRefButtonValue(true);
-
-         getSingleCharacterByName(charName).then((res) => {
-            setCharList(res.data.results);
-            setLoad(false);
-         });
-
+         getChar(charName);
+         setFindCharByName(charName);
          setCharName("");
       }
    };
+
+   // console.log(charByNameQuery?.data);
+   // useEffect(() => {
+   //    setFindCharByName("");
+   // }, [findCharByName]);
 
    const onEnterClick = (e) => {
       if (e.key === "Enter") {
@@ -43,9 +52,20 @@ const FindCharacter = () => {
       }
    };
 
-   const changeMaxHeigth = () => {
-      setRefButtonValue((value) => !value);
+   const getChar = (name) => {
+      return request(`/characters?nameStartsWith=${name}`);
    };
+
+   function fet() {}
+   const charByNameQuery = useQuery(["characters", findCharByName], () => getChar(), {
+      // select: (data) => data.data.data.results,
+      enabled: Boolean(requestik),
+      onSuccess: (data) => console.log(data),
+   });
+
+   // console.log(charByNameQuery.data);
+
+   // if (charByNameQuery.isFetching) return <SpinnerBlock />;
 
    return (
       <>
@@ -61,11 +81,7 @@ const FindCharacter = () => {
                      onChange={(e) => setCharName(e.target.value)}
                      onKeyDown={onEnterClick}></input>
                   {charName && (
-                     <button
-                        className="clear-button"
-                        type="reset"
-                        title="Click me to clear the input field"
-                        onClick={() => setCharName("")}>
+                     <button className="clear-button" type="reset" title="Click me to clear the input field" onClick={() => setCharName("")}>
                         ✖
                      </button>
                   )}
@@ -76,29 +92,25 @@ const FindCharacter = () => {
             </div>
             {emptyName ? <p style={{ color: "#9f0013", fontSize: "18px" }}>This field is required</p> : ""}
 
-            {load ? (
-               <SpinnerBlock />
-            ) : (
-               charList !== null && (
-                  <>
-                     <p style={{ color: "#03710E", fontSize: "18px" }}>{charList.length} characters were found by this name</p>
-                     <ul ref={charUlRef} className="char__selected-input-char-list">
-                        {charList.map((item) => (
-                           <li key={item.id} className="char__selected-input-char-list-item">
-                              <NavLink to={`characters/${item.id}`} target="_blank">
-                                 {item.name}
-                              </NavLink>
-                           </li>
-                        ))}
-                     </ul>
-                     {charList !== null && charList.length > 5 && (
-                        <button className="button-main" onClick={changeMaxHeigth}>
-                           {refButtonValue ? "Show all" : "Hide"}
-                        </button>
-                     )}
-                  </>
-               )
-            )}
+            {/* {charByNameQuery.isSuccess && (
+               <>
+                  <p style={{ color: "#03710E", fontSize: "18px" }}>{charByNameQuery.data.length} characters were found by this name</p>
+                  <ul ref={charUlRef} className="char__selected-input-char-list">
+                     {charByNameQuery.data.map((item) => (
+                        <li key={item.id} className="char__selected-input-char-list-item">
+                           <NavLink to={`characters/${item.id}`} target="_blank">
+                              {item.name}
+                           </NavLink>
+                        </li>
+                     ))}
+                  </ul>
+                  {charByNameQuery.data !== null && charByNameQuery.data.length > 5 && (
+                     <button className="button-main" onClick={"changeMaxHeigth"}>
+                        {refButtonValue ? "Show all" : "Hide"}
+                     </button>
+                  )}
+               </>
+            )} */}
          </div>
       </>
    );

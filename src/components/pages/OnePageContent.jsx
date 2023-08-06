@@ -1,11 +1,11 @@
 import { AppBanner } from "../AppBanner/AppBanner";
-import { OnePageContent } from "../OnePageContent/OnePageContent";
+import { SinglePageContent } from "../SinglePageContent/SinglePageContent";
 
 const SingleContentPage = () => {
    return (
       <div className="container">
          <AppBanner />
-         <OnePageContent />
+         <SinglePageContent />
       </div>
    );
 };

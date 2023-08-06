@@ -1048,7 +1048,6 @@ legend {
 }
 
 .error__message-content {
-  padding: 40px 35px;
   position: relative;
 }
 @media (max-width: 600px) {
@@ -1078,8 +1077,8 @@ legend {
 .error__message-image {
   width: 170px;
   position: absolute;
-  right: 5px;
-  bottom: 0px;
+  right: -44px;
+  bottom: -43px;
 }
 @media (max-width: 600px) {
   .error__message-image {
