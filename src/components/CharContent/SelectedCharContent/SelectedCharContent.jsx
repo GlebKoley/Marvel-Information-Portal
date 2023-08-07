@@ -7,7 +7,7 @@ import { SkeletonLoader } from "../../UI/SkeletonLoader/SkeletonLoader";
 import { useContext } from "react";
 import { CharacterSelectedContext } from "../../../context/CharacterSelectedContext";
 
-const SelectedCharContent = ({ currentCharSelected }) => {
+const SelectedCharContent = () => {
    const { characterSelected } = useContext(CharacterSelectedContext);
 
    const { charByIdQuery } = useGetCharById(characterSelected, "character selected");

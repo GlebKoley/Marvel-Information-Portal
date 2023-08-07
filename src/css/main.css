@@ -745,6 +745,10 @@ legend {
       -ms-flex-align: center;
           align-items: center;
 }
+.char__selected-input-find-container .button-main {
+  background: #9f0013;
+  border: 1px solid #9f0013;
+}
 .char__selected-input-char-list {
   font-weight: 400;
   max-height: 160px;
@@ -785,51 +789,19 @@ legend {
 .form-container input:focus {
   border: 2px solid #000000;
 }
-.form-container button {
+.form-container .clear-button {
   position: absolute;
-  top: 12%;
-  right: 2%;
+  top: 0%;
+  right: 0%;
   opacity: 0.3;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
 }
-.form-container button:hover {
+.form-container .clear-button:hover {
   opacity: 1;
   background-color: rgba(0, 0, 0, 0.1);
-  border: 2px solid 0, 0, 0, 0.25;
+  border: 1px solid 0, 0, 0, 0.25;
   border-radius: 20px;
-}
-
-.animated__lists-enter {
-  max-height: 160px;
-}
-
-.animated__lists-enter {
-  max-height: 2500px;
-}
-
-.animated__lists-enter-active {
-  max-height: 160px;
-  -webkit-transition: all 1000ms ease-in-out;
-  transition: all 1000ms ease-in-out;
-}
-
-.animated__lists-exit-active {
-  max-height: 3500px;
-  -webkit-transition: all 1000ms ease-in-out;
-  transition: all 1000ms ease-in-out;
-}
-
-.animated__lists-exit-done {
-  max-height: 3500px;
-  -webkit-transition: all 1000ms ease-in-out;
-  transition: all 1000ms ease-in-out;
-}
-
-.animated__lists-enter-done {
-  max-height: 160px;
-  -webkit-transition: all 1000ms ease-in-out;
-  transition: all 1000ms ease-in-out;
 }
 
 .container__single__page {

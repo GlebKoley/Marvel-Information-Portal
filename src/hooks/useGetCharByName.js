@@ -1,12 +1,20 @@
 import { useQuery } from "@tanstack/react-query";
 import { api } from "../services/api";
 
-export function useGetCharByName(name) {
-   const { request } = api();
+import { useContext } from "react";
+import { CharacterSelectedContext } from "../context/CharacterSelectedContext";
 
-   const charByNameQuery = useQuery(["characters", name], () => request(`/characters?nameStartsWith=${name}`), {
+export function useGetCharByName(name) {
+   const { setFindCharacterList } = useContext(CharacterSelectedContext);
+
+   const { request, _transformCharacterData } = api();
+
+   const charByNameQuery = useQuery(["characters-name", name], () => request(`/characters?nameStartsWith=${name}`), {
       enabled: !!name,
-      select: (data) => data.data.data.results,
+      select: (data) => data?.data?.data?.results.map((item) => _transformCharacterData(item)),
+      onSuccess: () => {
+         setFindCharacterList(name);
+      },
    });
 
    return { charByNameQuery };

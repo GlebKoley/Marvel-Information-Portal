@@ -1,9 +1,8 @@
-import { useState, useRef } from "react";
+import { useRef } from "react";
 
 import { CharactersLists } from "./CharactersLists/CharactersLists";
 import { SelectedCharContent } from "./SelectedCharContent/SelectedCharContent";
-import { FindCharacter } from "./FindCharacter/FindCharacter";
-import { SkeletonLoader } from "../UI/SkeletonLoader/SkeletonLoader";
+import { FindCharacterForm } from "./FindCharacterForm/FindCharacterForm";
 
 const CharContent = () => {
    const scrollRef = useRef(null);
@@ -17,12 +16,10 @@ const CharContent = () => {
          <div className="char__list">
             <CharactersLists scrollToCharacterBlock={scrollToCharacterBlock} />
          </div>
-         <div ref={scrollRef} className="char__selected">
-            <div className="char__selected-container">
-               {/* {currentCharSelected ? <SelectedCharContent currentCharSelected={currentCharSelected} /> : <SkeletonLoader />} */}
-               {/* <SelectedCharContent currentCharSelected={currentCharSelected} /> */}
+         <div className="char__selected">
+            <div ref={scrollRef} className="char__selected-container">
                <SelectedCharContent />
-               <FindCharacter />
+               <FindCharacterForm />
             </div>
          </div>
       </div>

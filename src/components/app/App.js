@@ -22,10 +22,11 @@ const router = createBrowserRouter(
 
 const App = () => {
    const [characterSelected, setCharacterSelected] = useState(null);
+   const [findCharacterList, setFindCharacterList] = useState(null);
 
    return (
       <div className="app">
-         <CharacterSelectedContext.Provider value={{ characterSelected, setCharacterSelected }}>
+         <CharacterSelectedContext.Provider value={{ characterSelected, setCharacterSelected, findCharacterList, setFindCharacterList }}>
             <RouterProvider router={router} />
          </CharacterSelectedContext.Provider>
       </div>

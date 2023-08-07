@@ -17,6 +17,11 @@
          display: flex;
          justify-content: space-between;
          align-items: center;
+
+         .button-main {
+            background: #9f0013;
+            border: 1px solid #9f0013;
+         }
       }
    }
 
@@ -63,46 +68,19 @@
       }
    }
 
-   button {
+   .clear-button {
       position: absolute;
-      top: 12%;
-      right: 2%;
+      top: 0%;
+      right: 0%;
       opacity: 0.3;
-      width: 30px;
-      height: 30px;
+      width: 40px;
+      height: 40px;
 
       &:hover {
          opacity: 1;
          background-color: rgba(0, 0, 0, 0.1);
-         border: 2px solid (0, 0, 0, 0.25);
+         border: 1px solid (0, 0, 0, 0.25);
          border-radius: 20px;
       }
    }
-}
-
-.animated__lists-enter {
-   max-height: 160px;
-}
-
-.animated__lists-enter {
-   max-height: 2500px;
-}
-
-.animated__lists-enter-active {
-   max-height: 160px;
-   transition: all 1000ms ease-in-out;
-}
-.animated__lists-exit-active {
-   max-height: 3500px;
-   transition: all 1000ms ease-in-out;
-}
-
-.animated__lists-exit-done {
-   max-height: 3500px;
-   transition: all 1000ms ease-in-out;
-}
-
-.animated__lists-enter-done {
-   max-height: 160px;
-   transition: all 1000ms ease-in-out;
 }
