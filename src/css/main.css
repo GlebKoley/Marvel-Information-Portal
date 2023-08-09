@@ -751,7 +751,6 @@ legend {
 }
 .char__selected-input-char-list {
   font-weight: 400;
-  max-height: 160px;
   overflow: hidden;
 }
 .char__selected-input-char-list-item {
@@ -1064,14 +1063,10 @@ legend {
 }
 
 body {
-  max-width: 100vw;
-  max-height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  height: 100vh;
   position: relative;
-}
-
-#root {
-  max-width: 100vw;
-  max-height: 100vh;
 }
 
 button {

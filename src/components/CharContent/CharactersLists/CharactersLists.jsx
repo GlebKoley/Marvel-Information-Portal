@@ -7,10 +7,13 @@ import { ModaWindow } from "../../UI/ModalWindow/ModalWindow";
 import { useContext } from "react";
 import { CharacterSelectedContext } from "../../../context/CharacterSelectedContext";
 
+import { animated } from "@react-spring/web";
+
+import { useAnimiton } from "./animation";
+
 const CharactersLists = ({ scrollToCharacterBlock }) => {
    const { setCharacterSelected } = useContext(CharacterSelectedContext);
 
-   const charGridRef = useRef();
    const [backgroundCharById, setBackgroundCharById] = useState(null);
    const [showModal, setShowModal] = useState(false);
    const [resetOffset, setResetOffset] = useState(null);
@@ -34,18 +37,22 @@ const CharactersLists = ({ scrollToCharacterBlock }) => {
       setShowModal(true);
    };
 
+   const { props } = useAnimiton(data);
+
    if (isLoading) return <SpinnerBlock />;
 
    return (
-      <>
-         <ul className="char__grid" ref={charGridRef}>
-            {data.map((item) => (
-               <li className={backgroundCharById === item.id ? "char__item selected" : "char__item"} onClick={() => charIdHandler(item.id)} key={item.id}>
-                  <img className="char__img" src={item.thumbnail} alt=""></img>
-                  <div className="char__name-container">{item.name}</div>
-               </li>
-            ))}
-         </ul>
+      <div className="char__list">
+         <animated.div style={props}>
+            <ul className="char__grid">
+               {data.map((item) => (
+                  <li className={backgroundCharById === item.id ? "char__item selected" : "char__item"} onClick={() => charIdHandler(item.id)} key={item.id}>
+                     <img className="char__img" src={item.thumbnail} alt=""></img>
+                     <div className="char__name-container">{item.name}</div>
+                  </li>
+               ))}
+            </ul>
+         </animated.div>
          {isFetchingNextPage && <SpinnerBlock />}
          <div className="char__list-buttons">
             <button className="button-main" onClick={() => fetchNextPage()} title="Click to load new 9 characters">
@@ -56,7 +63,7 @@ const CharactersLists = ({ scrollToCharacterBlock }) => {
             </button>
             {showModal ? <ModaWindow setShowModal={setShowModal} resetAllCharacters={resetAllCharacters} /> : null}
          </div>
-      </>
+      </div>
    );
 };
 

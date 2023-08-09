@@ -9,11 +9,16 @@ import { SpinnerBlock } from "../../UI/SpinnerBlock/SpinnerBlock";
 import { useContext } from "react";
 import { CharacterSelectedContext } from "../../../context/CharacterSelectedContext";
 
+import AnimateHeight from "react-animate-height";
+
 const FindCharacterForm = () => {
    let searchInput = useRef(null);
+   let listRef = useRef(null);
    const { findCharacterList } = useContext(CharacterSelectedContext);
 
    const [characterName, setCharacterName] = useState(findCharacterList || null);
+   const [showCharactersList, setShowCharactersList] = useState(false);
+   const [height, setHeight] = useState(160);
 
    const {
       register,
@@ -35,6 +40,8 @@ const FindCharacterForm = () => {
       clearErrors();
       setCharacterName(data.charaterName);
    };
+
+   console.log("render");
 
    const { charByNameQuery } = useGetCharByName(characterName);
 
@@ -66,18 +73,25 @@ const FindCharacterForm = () => {
             {charByNameQuery?.data?.length > 1 && (
                <>
                   <p style={{ color: "#03710E", fontSize: "18px" }}>{charByNameQuery.data.length} characters were found by this name</p>
-                  <ul className="char__selected-input-char-list">
-                     {charByNameQuery?.data.map((item) => (
-                        <li key={item.id} className="char__selected-input-char-list-item">
-                           <Link to={`characters/${item.id}`}>{item.name}</Link>
-                        </li>
-                     ))}
-                  </ul>
-                  {/* {charByNameQuery?.data !== null && charByNameQuery?.data.length > 5 && (
-                     <button className="button-main" onClick={"changeMaxHeigth"}>
-                        {refButtonValue ? "Show all" : "Hide"}
+                  <AnimateHeight duration={1000} height={height}>
+                     <ul ref={listRef} className="char__selected-input-char-list">
+                        {charByNameQuery?.data.map((item) => (
+                           <li key={item.id} className="char__selected-input-char-list-item">
+                              <Link to={`characters/${item.id}`}>{item.name}</Link>
+                           </li>
+                        ))}
+                     </ul>
+                  </AnimateHeight>
+                  {charByNameQuery?.data !== null && charByNameQuery?.data.length > 5 && (
+                     <button
+                        className="button-main"
+                        onClick={() => {
+                           setShowCharactersList(!showCharactersList);
+                           setHeight(height === 160 ? "auto" : 160);
+                        }}>
+                        {showCharactersList ? "Hide" : "Show all"}
                      </button>
-                  )} */}
+                  )}
                </>
             )}
          </div>

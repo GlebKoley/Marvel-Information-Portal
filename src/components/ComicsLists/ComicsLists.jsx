@@ -3,7 +3,12 @@ import { Link } from "react-router-dom";
 import { SpinnerBlock } from "../UI/SpinnerBlock/SpinnerBlock";
 import { useInfinityQueryContent } from "../../hooks/useInfinityQueryContent";
 
+// import { useContext } from "react";
+// import { TestContext } from "../../context/TestContext";
+
 const ComicsList = () => {
+   // const { test } = useContext(TestContext);
+   // console.log(test);
    const { data, fetchNextPage, isFetchingNextPage, isLoading } = useInfinityQueryContent({ queryName: "comics", offset: null });
 
    if (isLoading) return <SpinnerBlock />;
