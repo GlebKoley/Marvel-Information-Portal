@@ -1,4 +1,4 @@
-.wrapper {
+.error__wrapper {
    width: 45%;
    margin: 50px auto;
    display: flex;
@@ -6,19 +6,19 @@
    gap: 20px;
 }
 
-.error {
+.error__text {
    color: #9f0013;
    font-size: 40px;
    font-weight: bold;
    text-transform: uppercase;
 }
 
-.description {
+.error__description {
    text-align: justify;
    font-size: 26px;
 }
 
-.link {
+.error__link {
    margin-top: 10px;
    text-align: center;
    font-size: 27px;

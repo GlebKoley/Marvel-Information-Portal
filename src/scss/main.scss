@@ -1,20 +1,18 @@
 @import "./reset";
 @import "./variable";
 
-@import "../components/RandomCharacterContent/RandomCharacterContent";
+@import "../components/RandomCharacterBlock/RandomCharacterBlock";
 @import "../components/AppBanner/AppBanner";
 @import "../components/AppHeader/AppHeader";
-@import "../components/CharContent/CharContent";
 @import "../components/ComicsLists/ComicsLists";
-@import "../components/CharContent/CharactersLists/CharactersLists";
-@import "../components/CharContent/SelectedCharContent/SelectedCharContent";
-@import "../components/CharContent/FindCharacterForm/FindCharacterForm";
+@import "../components/CharactersLists/CharactersLists";
+@import "../components/SelectedCharacterInfo/SelectedCharacterInfo";
+@import "../components/CharacterSearchBlock/CharacterSearchBlock";
 @import "../components/SinglePageContent/SinglePageContent";
-
 @import "../components/UI/ScrollUpButton/ScrollUpButton";
 @import "../components/UI/ModalWindow/ModalWindow";
 @import "../components/UI/ErrorMessage/ErrorMessage";
-
+@import "../components/Pages/404Page/404page";
 * {
    font-family: "Roboto Condensed", sans-serif;
 }
@@ -31,10 +29,10 @@ button {
    transition: transform 150ms linear;
 }
 
-.bg__img {
+.footer_img {
    position: absolute;
-   right: -174px;
-   bottom: -70px;
+   right: 0px;
+   bottom: 0px;
    z-index: -1;
 }
 

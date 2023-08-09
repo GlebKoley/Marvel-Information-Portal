@@ -1,5 +1,5 @@
-import { AppBanner } from "../AppBanner/AppBanner";
-import { ComicsList } from "../ComicsLists/ComicsLists";
+import { AppBanner } from "../components/AppBanner/AppBanner";
+import { ComicsList } from "../components/ComicsLists/ComicsLists";
 
 const ComicsListPage = () => {
    return (

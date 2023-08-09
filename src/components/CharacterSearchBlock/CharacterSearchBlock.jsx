@@ -1,17 +1,17 @@
 import { useState, useRef } from "react";
 import { useForm } from "react-hook-form";
 
-import { useGetCharByName } from "../../../hooks/useGetCharByName";
+import { useGetCharByName } from "../../hooks/useGetCharByName";
 
 import { Link } from "react-router-dom";
-import { SpinnerBlock } from "../../UI/SpinnerBlock/SpinnerBlock";
+import { SpinnerBlock } from "../UI/SpinnerBlock/SpinnerBlock";
 
 import { useContext } from "react";
-import { CharacterSelectedContext } from "../../../context/CharacterSelectedContext";
+import { CharacterSelectedContext } from "../../context/CharacterSelectedContext";
 
 import AnimateHeight from "react-animate-height";
 
-const FindCharacterForm = () => {
+const CharacterSearchBlock = () => {
    let searchInput = useRef(null);
    let listRef = useRef(null);
    const { findCharacterList } = useContext(CharacterSelectedContext);
@@ -40,8 +40,6 @@ const FindCharacterForm = () => {
       clearErrors();
       setCharacterName(data.charaterName);
    };
-
-   console.log("render");
 
    const { charByNameQuery } = useGetCharByName(characterName);
 
@@ -99,4 +97,4 @@ const FindCharacterForm = () => {
    );
 };
 
-export { FindCharacterForm };
+export { CharacterSearchBlock };

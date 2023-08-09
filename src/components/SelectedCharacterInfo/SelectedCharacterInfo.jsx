@@ -1,13 +1,13 @@
-import { useGetCharById } from "../../../hooks/useGetCharById";
+import { useGetCharById } from "../../hooks/useGetCharById";
 import { Link } from "react-router-dom";
 
-import { SpinnerBlock } from "../../UI/SpinnerBlock/SpinnerBlock";
-import { SkeletonLoader } from "../../UI/SkeletonLoader/SkeletonLoader";
+import { SpinnerBlock } from "../UI/SpinnerBlock/SpinnerBlock";
+import { SkeletonLoader } from "../UI/SkeletonLoader/SkeletonLoader";
 
 import { useContext } from "react";
-import { CharacterSelectedContext } from "../../../context/CharacterSelectedContext";
+import { CharacterSelectedContext } from "../../context/CharacterSelectedContext";
 
-const SelectedCharContent = () => {
+const SelectedCharacterInfo = () => {
    const { characterSelected } = useContext(CharacterSelectedContext);
 
    const { charByIdQuery } = useGetCharById(characterSelected, "character selected");
@@ -67,4 +67,4 @@ const SelectedCharContent = () => {
    );
 };
 
-export { SelectedCharContent };
+export { SelectedCharacterInfo };

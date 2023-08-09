@@ -5,14 +5,12 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 import { CharacterSelectedContext } from "../../context/CharacterSelectedContext";
 
-import { TestContext } from "../../context/TestContext";
-
 import AppHeader from "../AppHeader/AppHeader";
 
-const MainPage = lazy(() => import("../Pages/MainPage"));
-const ComicsListPage = lazy(() => import("../Pages/ComicsListsPage"));
-const OnePageContent = lazy(() => import("../Pages/OnePageContent"));
-const Page404 = lazy(() => import("../Pages/404page"));
+const MainPage = lazy(() => import("../../Pages/MainPage"));
+const ComicsListPage = lazy(() => import("../../Pages/ComicsListsPage"));
+const OnePageContent = lazy(() => import("../../Pages/OnePageContent"));
+const Page404 = lazy(() => import("../../Pages/404Page/404page"));
 
 const queryClient = new QueryClient({
    defaultOptions: {
@@ -40,17 +38,14 @@ const router = createBrowserRouter(
 const App = () => {
    const [characterSelected, setCharacterSelected] = useState(null);
    const [findCharacterList, setFindCharacterList] = useState(null);
-   const [test, setTest] = useState("est` context");
 
    return (
       <div className="app">
          <CharacterSelectedContext.Provider value={{ characterSelected, setCharacterSelected, findCharacterList, setFindCharacterList }}>
-            {/* <TestContext.Provider value={{ test, setTest }}> */}
             <QueryClientProvider client={queryClient}>
                <RouterProvider router={router} />
                <ReactQueryDevtools />
             </QueryClientProvider>
-            {/* </TestContext.Provider> */}
          </CharacterSelectedContext.Provider>
       </div>
    );

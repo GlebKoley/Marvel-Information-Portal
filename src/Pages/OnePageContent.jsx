@@ -1,5 +1,5 @@
-import { AppBanner } from "../AppBanner/AppBanner";
-import { SinglePageContent } from "../SinglePageContent/SinglePageContent";
+import { AppBanner } from "../components/AppBanner/AppBanner";
+import { SinglePageContent } from "../components/SinglePageContent/SinglePageContent";
 
 const SingleContentPage = () => {
    return (

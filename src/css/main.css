@@ -388,31 +388,6 @@ legend {
   }
 }
 
-.char__content {
-  gap: 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.char__list {
-  -ms-flex-preferred-size: 650px;
-      flex-basis: 650px;
-}
-.char__list li {
-  padding: 15px;
-  cursor: pointer;
-  -webkit-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
-          box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
-  list-style-type: none;
-}
-.char__list ul {
-  padding-left: 0;
-}
-
 .comics__list li,
 .comics__list ul {
   padding: 0;
@@ -480,6 +455,31 @@ legend {
   font-size: 15px;
   line-height: 16px;
   color: rgba(0, 0, 0, 0.6);
+}
+
+.char__list {
+  -ms-flex-preferred-size: 650px;
+      flex-basis: 650px;
+}
+.char__list li {
+  padding: 15px;
+  cursor: pointer;
+  -webkit-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+          box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+  list-style-type: none;
+}
+.char__list ul {
+  padding-left: 0;
+}
+
+.char__content {
+  gap: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .char__grid {
@@ -1058,6 +1058,43 @@ legend {
   }
 }
 
+.error__wrapper {
+  width: 45%;
+  margin: 50px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+}
+
+.error__text {
+  color: #9f0013;
+  font-size: 40px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.error__description {
+  text-align: justify;
+  font-size: 26px;
+}
+
+.error__link {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 27px;
+  color: #9f0013;
+  font-weight: bold;
+}
+.error__link:hover {
+  text-decoration: underline;
+  font-size: 28px;
+}
+
 * {
   font-family: "Roboto Condensed", sans-serif;
 }
@@ -1076,10 +1113,10 @@ button {
   transition: transform 150ms linear, -webkit-transform 150ms linear;
 }
 
-.bg__img {
+.footer_img {
   position: absolute;
-  right: -174px;
-  bottom: -70px;
+  right: 0px;
+  bottom: 0px;
   z-index: -1;
 }
 

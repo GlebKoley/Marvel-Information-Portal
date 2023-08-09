@@ -1,5 +1,4 @@
-import { useState, useEffect } from "react";
-import { useParams, useLocation, Link } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 import { useGetComicsById } from "../../hooks/useGetComicsById";
 import { useGetCharById } from "../../hooks/useGetCharById";
 
@@ -13,15 +12,13 @@ const SinglePageContent = () => {
    const { id } = useParams();
 
    if (location.pathname.search(/comics/gi) === 1) {
-      return <ViewComics id={id} navigate={navigate} />;
+      return <ViewComicsPage id={id} navigate={navigate} />;
    } else {
-      return <ViewChar id={id} navigate={navigate} />;
+      return <ViewChararacterPage id={id} navigate={navigate} />;
    }
-
-   // if (comicsByIdQuery.isLoading) return <SpinnerBlock />;
 };
 
-const ViewComics = ({ id, navigate }) => {
+const ViewComicsPage = ({ id, navigate }) => {
    const { comicsByIdQuery } = useGetComicsById(id);
 
    if (comicsByIdQuery.isLoading) return <SpinnerBlock />;
@@ -48,7 +45,7 @@ const ViewComics = ({ id, navigate }) => {
    });
 };
 
-const ViewChar = ({ id, navigate }) => {
+const ViewChararacterPage = ({ id, navigate }) => {
    const { charByIdQuery } = useGetCharById(id, "character single page");
 
    if (charByIdQuery.isLoading) return <SpinnerBlock />;

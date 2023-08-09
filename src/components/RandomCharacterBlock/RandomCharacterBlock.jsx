@@ -5,7 +5,7 @@ import { SpinnerBlock } from "../UI/SpinnerBlock/SpinnerBlock";
 
 import { useGetCharById } from "../../hooks/useGetCharById";
 
-const RandomCharacterContent = () => {
+const RandomCharacterBlock = () => {
    const randomId = () => Math.floor(Math.random() * (1011400 - 1011000) + 1011000);
 
    const [id, setId] = useState(randomId);
@@ -13,7 +13,7 @@ const RandomCharacterContent = () => {
 
    return (
       <div className="randomchar">
-         {charByIdQuery.isLoading ? <SpinnerBlock /> : <CharBlock charByIdQuery={charByIdQuery.data} />}
+         {charByIdQuery.isLoading ? <SpinnerBlock /> : <ViewCharacterBlock charByIdQuery={charByIdQuery.data} />}
 
          <div className="randomchar__static">
             <p className="randomchar__static-title">
@@ -31,7 +31,7 @@ const RandomCharacterContent = () => {
    );
 };
 
-const CharBlock = ({ charByIdQuery }) => {
+const ViewCharacterBlock = ({ charByIdQuery }) => {
    if (charByIdQuery === undefined) {
       return (
          <div className="randomchar__block">
@@ -64,4 +64,4 @@ const CharBlock = ({ charByIdQuery }) => {
    );
 };
 
-export default RandomCharacterContent;
+export { RandomCharacterBlock };
