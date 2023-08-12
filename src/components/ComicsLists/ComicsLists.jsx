@@ -3,12 +3,8 @@ import { Link } from "react-router-dom";
 import { SpinnerBlock } from "../UI/SpinnerBlock/SpinnerBlock";
 import { useInfinityQueryContent } from "../../hooks/useInfinityQueryContent";
 
-// import { useContext } from "react";
-// import { TestContext } from "../../context/TestContext";
 
 const ComicsList = () => {
-   // const { test } = useContext(TestContext);
-   // console.log(test);
    const { data, fetchNextPage, isFetchingNextPage, isLoading } = useInfinityQueryContent({ queryName: "comics", offset: null });
 
    if (isLoading) return <SpinnerBlock />;
@@ -24,9 +20,9 @@ const ComicsList = () => {
                   <li key={item.id} className="comics__item">
                      <Link to={`${item.id}`}>
                         <img src={item.thumbnail} alt="" className="comics__item-img" />
+                        <h1 className="comics__item-name">{item.title}</h1>
+                        <p className="comics__item-price">{priceNotZero}</p>
                      </Link>
-                     <h1 className="comics__item-name">{item.title}</h1>
-                     <p className="comics__item-price">{priceNotZero}</p>
                   </li>
                );
             })}

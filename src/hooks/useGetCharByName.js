@@ -15,6 +15,8 @@ export function useGetCharByName(name) {
       onSuccess: () => {
          setFindCharacterList(name);
       },
+      onError: () => console.log("dawdawd"),
+      keepPreviousData: name === "" ? false : true,
    });
 
    return { charByNameQuery };

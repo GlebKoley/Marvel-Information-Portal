@@ -1,11 +1,11 @@
+import { useContext } from "react";
 import { useGetCharById } from "../../hooks/useGetCharById";
+
+import { CharacterSelectedContext } from "../../context/CharacterSelectedContext";
 import { Link } from "react-router-dom";
 
 import { SpinnerBlock } from "../UI/SpinnerBlock/SpinnerBlock";
 import { SkeletonLoader } from "../UI/SkeletonLoader/SkeletonLoader";
-
-import { useContext } from "react";
-import { CharacterSelectedContext } from "../../context/CharacterSelectedContext";
 
 const SelectedCharacterInfo = () => {
    const { characterSelected } = useContext(CharacterSelectedContext);

@@ -18,9 +18,7 @@ export function useInfinityQueryContent({ queryName = "characters", offset }) {
       currentOffsetLimit = _baseComicsListLimit;
    }
 
-   // const pageParam = offset === null ? offsetName : offset
-
-   const { data, fetchNextPage, isFetchingNextPage, isLoading, isSuccess } = useInfiniteQuery({
+   const { data, fetchNextPage, isFetchingNextPage, isLoading, isError } = useInfiniteQuery({
       queryKey: [queryName, offset],
       queryFn: async ({ pageParam = offset === null ? offsetName : offset }) =>
          await request(queryName, {
@@ -37,5 +35,5 @@ export function useInfinityQueryContent({ queryName = "characters", offset }) {
             .map((item) => transformFunc(item)),
    });
 
-   return { data, fetchNextPage, isFetchingNextPage, isLoading, isSuccess };
+   return { data, fetchNextPage, isFetchingNextPage, isLoading, isError };
 }

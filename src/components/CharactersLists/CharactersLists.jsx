@@ -7,9 +7,7 @@ import { ModaWindow } from "../UI/ModalWindow/ModalWindow";
 import { useContext } from "react";
 import { CharacterSelectedContext } from "../../context/CharacterSelectedContext";
 
-import { animated } from "@react-spring/web";
-
-import { useAnimiton } from "./animation";
+import { motion } from "framer-motion";
 
 const CharactersLists = () => {
    const { setCharacterSelected } = useContext(CharacterSelectedContext);
@@ -18,7 +16,7 @@ const CharactersLists = () => {
    const [showModal, setShowModal] = useState(false);
    const [resetOffset, setResetOffset] = useState(null);
 
-   const { data, fetchNextPage, isFetchingNextPage, isLoading } = useInfinityQueryContent({ queryName: "characters", offset: resetOffset });
+   const { data, fetchNextPage, isFetchingNextPage, isLoading, isError } = useInfinityQueryContent({ queryName: "characters", offset: resetOffset });
 
    const charIdHandler = (id) => {
       setBackgroundCharById(id);
@@ -36,23 +34,21 @@ const CharactersLists = () => {
       setShowModal(true);
    };
 
-   const { props } = useAnimiton(data);
+   if (isError) return <p>ОШИБКА ЗАПРОСА</p>;
 
    if (isLoading) return <SpinnerBlock />;
 
    return (
       <div className="char__content">
          <div className="char__list">
-            <animated.div style={props}>
-               <ul className="char__grid">
-                  {data.map((item) => (
-                     <li className={backgroundCharById === item.id ? "char__item selected" : "char__item"} onClick={() => charIdHandler(item.id)} key={item.id}>
-                        <img className="char__img" src={item.thumbnail} alt=""></img>
-                        <div className="char__name-container">{item.name}</div>
-                     </li>
-                  ))}
-               </ul>
-            </animated.div>
+            <motion.ul transition={{ duration: 0.4 }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="char__grid">
+               {data.map((item) => (
+                  <li className={backgroundCharById === item.id ? "char__item selected" : "char__item"} onClick={() => charIdHandler(item.id)} key={item.id}>
+                     <img className="char__img" src={item.thumbnail} alt=""></img>
+                     <div className="char__name-container">{item.name}</div>
+                  </li>
+               ))}
+            </motion.ul>
             {isFetchingNextPage && <SpinnerBlock />}
             <div className="char__list-buttons">
                <button className="button-main" onClick={() => fetchNextPage()} title="Click to load new 9 characters">

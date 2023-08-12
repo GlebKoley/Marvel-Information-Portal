@@ -1,10 +1,15 @@
+import { useLocation } from "react-router-dom";
 import { Link, NavLink, Outlet } from "react-router-dom";
 import { Suspense } from "react";
+
 import { SpinnerBlock } from "../UI/SpinnerBlock/SpinnerBlock";
 
-import { useSpring, animated } from "@react-spring/web";
-
 const AppHeader = () => {
+   let classes = "";
+   const location = useLocation();
+   if (location.pathname.search(/characters/gi) === 1) {
+      classes += " active";
+   }
    return (
       <>
          <header className="header">
@@ -15,7 +20,7 @@ const AppHeader = () => {
                </Link>
             </h1>
             <nav className="nav">
-               <NavLink className="nav__link__characters" to="/">
+               <NavLink className={"nav__link__characters" + classes} to="/">
                   Characters
                </NavLink>
                <span style={{ userSelect: "none" }}>/</span>
